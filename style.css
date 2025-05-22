@@ -76,3 +76,11 @@ body {
   cursor: pointer;
   z-index: 1001;
 }
+.footer-text {
+  text-align: center;
+  font-weight: bold;
+  margin: 40px 0 20px 0;
+  font-size: 2em; /* Aumentado el tamaño */
+  color: #007BFF; /* Azul brillante */
+}
+
