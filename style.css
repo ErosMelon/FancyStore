@@ -1,13 +1,11 @@
+
 body {
-  background-image: url('images/omen-red.jpg'); /* Asegúrate de que la ruta sea correcta */
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  overflow: hidden;
+  font-family: sans-serif;
+  background: #121212;
+  color: white;
+  text-align: center;
+  padding: 20px;
+
 }
 
 }
