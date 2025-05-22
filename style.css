@@ -1,5 +1,5 @@
 body {
-  background-image: url('https://images.wallpapersden.com/image/download/omen-red-valorant_bGxqbGWUmZqaraWkpJRobWllrWdma2U.jpg');
+  background-image: url('images/omen-red.jpg'); /* Asegúrate de que la ruta sea correcta */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -8,6 +8,8 @@ body {
   padding: 0;
   height: 100vh;
   overflow: hidden;
+}
+
 }
 
 }
