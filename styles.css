@@ -332,6 +332,92 @@ body {
   gap: 3rem;
 }
 
+/* Estado de los Cheats */
+.cheat-status-container {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.status-card {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(218, 165, 32, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.status-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(218, 165, 32, 0.4);
+  box-shadow: 0 8px 32px rgba(218, 165, 32, 0.15);
+}
+
+.status-card h3 {
+  color: #ffd700;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff4444;
+  box-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
+}
+
+.status-indicator.active .status-dot {
+  background: #44ff44;
+  box-shadow: 0 0 10px rgba(68, 255, 68, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.status-text {
+  font-size: 1.1rem;
+  color: #ff4444;
+  font-weight: 600;
+}
+
+.status-indicator.active .status-text {
+  color: #44ff44;
+}
+
+.status-update {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Cheat card */
 .cheat-card {
   background: rgba(0, 0, 0, 0.98);
   border: 1px solid rgba(218, 165, 32, 0.2);
