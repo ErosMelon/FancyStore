@@ -2,436 +2,195 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Valorant Accounts for Sale</title>
+  <title>Fancy Services</title>
   <link rel="icon" href="logo.png" type="image/png">
-  <style>
-    /* Fondo de gradiente animado */
-    body {
-      min-height: 100vh;
-      background: linear-gradient(-45deg, #1a003a, #35004b, #007bff, #ff00de);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      overflow-x: hidden;
-      position: relative;
-      font-family: 'Segoe UI', 'Arial', sans-serif;
-    }
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    #particles-js {
-      position: fixed;
-      z-index: 0;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      pointer-events: none;
-    }
-
-    /* Presentación Fancy Services */
-    #presentation {
-      position: fixed;
-      z-index: 10000;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background: rgba(20,4,44,0.96);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.8s;
-      opacity: 1;
-      pointer-events: auto;
-    }
-    #presentation.hide {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.8s, visibility 0s linear 0.8s;
-      visibility: hidden;
-    }
-    .presentation-title {
-      font-size: 5vw;
-      color: #fff;
-      letter-spacing: 0.12em;
-      text-shadow:
-        0 0 25px #fff,
-        0 0 60px #ff00de,
-        0 0 120px #007bff;
-      animation: popUpAndMove 1.8s cubic-bezier(0.7,0.2,0.1,1) forwards;
-      opacity: 0;
-      filter: blur(8px);
-    }
-    @keyframes popUpAndMove {
-      0% {
-        opacity: 0; transform: scale(0.7) translateY(40vh); filter: blur(8px);
-      }
-      40% {
-        opacity: 1; transform: scale(1.12) translateY(0); filter: blur(0);
-      }
-      100% {
-        opacity: 1; transform: scale(1.0) translateY(-42vh); filter: blur(0);
-      }
-    }
-
-    /* Neon parpadeante para el título */
-    .neon-text {
-      color: #fff;
-      text-align: center;
-      margin-top: 56px;
-      margin-bottom: 16px;
-      font-size: 3rem;
-      text-shadow:
-        0 0 10px #fff,
-        0 0 20px #ff00de,
-        0 0 40px #ff00de,
-        0 0 80px #ff00de;
-      animation: flicker 1.3s infinite alternate, titleSlideDown 1s cubic-bezier(0.7,0.2,0.1,1);
-      opacity: 1;
-    }
-    @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; text-shadow: 0 0 20px #ff00de; }
-    }
-    @keyframes titleSlideDown {
-      from { transform: translateY(-60px); opacity: 0;}
-      to   { transform: translateY(0);   opacity: 1;}
-    }
-    .hide-title { opacity: 0; transition: opacity 0.5s; }
-
-    /* Galería */
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem 1.3rem;
-      margin: 0 auto 48px auto;
-      max-width: 1300px;
-      z-index: 10;
-      position: relative;
-      transition: filter 0.3s;
-    }
-
-    /* Card animada */
-    .card {
-      background: rgba(30, 0, 36, 0.95);
-      border-radius: 20px;
-      box-shadow: 0 4px 32px 4px #00000070, 0 0 24px 2px #ff00de33;
-      padding: 20px 18px 22px 18px;
-      width: 300px;
-      min-height: 380px;
-      text-align: center;
-      color: #fff;
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(70px) scale(0.95) rotate(-3deg);
-      animation: cardFadeIn 1.1s forwards, bounceCard 2.2s 1.2s infinite alternate;
-      transition: box-shadow 0.3s, transform 0.3s;
-      cursor: pointer;
-      backdrop-filter: blur(2px);
-    }
-    .card:hover {
-      box-shadow: 0 8px 48px 12px #ff00de99, 0 0 48px 6px #007bff44;
-      transform: scale(1.04) rotate(1deg);
-      animation: none;
-    }
-    .card:nth-child(1) { animation-delay: 0.2s; }
-    .card:nth-child(2) { animation-delay: 0.35s; }
-    .card:nth-child(3) { animation-delay: 0.5s; }
-    .card:nth-child(4) { animation-delay: 0.65s; }
-    .card:nth-child(5) { animation-delay: 0.8s; }
-    .card:nth-child(6) { animation-delay: 0.95s; }
-    .card:nth-child(7) { animation-delay: 1.1s; }
-    .card:nth-child(8) { animation-delay: 1.25s; }
-    .card:nth-child(9) { animation-delay: 1.4s; }
-    .card:nth-child(10) { animation-delay: 1.55s; }
-    .card:nth-child(11) { animation-delay: 1.7s; }
-
-    @keyframes cardFadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1) rotate(0deg);
-      }
-    }
-    @keyframes bounceCard {
-      0%   { box-shadow: 0 4px 32px 4px #00000070, 0 0 24px 2px #ff00de33; }
-      100% { box-shadow: 0 12px 48px 12px #ff00de66, 0 0 48px 6px #007bff44; }
-    }
-
-    /* Imagen de la card animada */
-    .card img.zoomable {
-      width: 100%;
-      max-width: 230px;
-      border-radius: 14px;
-      margin-bottom: 10px;
-      transition: transform 0.35s cubic-bezier(0.42,0,0.58,1), box-shadow 0.3s;
-      box-shadow: 0 2px 20px 2px #007bff33;
-      animation: popImg 1.2s cubic-bezier(0.7,0.2,0.1,1);
-    }
-    .card:hover img.zoomable {
-      transform: scale(1.08) rotate(-4deg);
-      box-shadow: 0 8px 32px #ff00de77;
-      filter: brightness(1.18) saturate(1.3);
-    }
-    @keyframes popImg {
-      from { opacity: 0; transform: scale(0.7);}
-      to { opacity: 1; transform: scale(1);}
-    }
-
-    /* Título de cada card */
-    .card h2 {
-      font-size: 1.2rem;
-      margin: 0 0 10px 0;
-      letter-spacing: 0.05em;
-      color: #ffb2ff;
-      text-shadow: 0 0 8px #ff00de66;
-      animation: pulseText 2s infinite alternate;
-    }
-    @keyframes pulseText {
-      from { filter: brightness(1.1);}
-      to   { filter: brightness(1.5);}
-    }
-
-    /* Garantía y descripción */
-    .card .garantia {
-      margin-top: 7px;
-      color: #00ffe0;
-      font-size: 1em;
-      font-weight: 700;
-      animation: flicker 2s infinite alternate;
-    }
-
-    .card p {
-      margin: 8px 0;
-      font-size: 1em;
-      color: #fff;
-      animation: fadeInText 1.5s;
-    }
-    @keyframes fadeInText {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Botón animado */
-    .buy-button {
-      background: linear-gradient(90deg, #ff00de 0%, #007bff 100%);
-      color: white;
-      padding: 12px 30px;
-      border: none;
-      border-radius: 50px;
-      margin-top: 12px;
-      font-size: 1.1em;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      cursor: pointer;
-      box-shadow: 0 0 20px 2px #ff00de66;
-      text-decoration: none;
-      transition: transform 0.22s, box-shadow 0.22s, filter 0.22s;
-      animation: btnShine 1.9s infinite alternate, bounceBtn 3s infinite;
-      outline: none;
-      display: inline-block;
-    }
-    .buy-button:hover {
-      transform: scale(1.08) rotate(-2deg);
-      filter: brightness(1.2) saturate(1.2);
-      box-shadow: 0 0 40px 8px #007bff99, 0 0 52px 6px #ff00de66;
-      animation: none;
-    }
-    @keyframes btnShine {
-      0%   { filter: brightness(1.12);}
-      100% { filter: brightness(1.33);}
-    }
-    @keyframes bounceBtn {
-      0%, 100% { transform: translateY(0);}
-      50%      { transform: translateY(-6px);}
-    }
-
-    /* Footer animado */
-    footer {
-      position: fixed;
-      width: 100vw;
-      bottom: 0;
-      text-align: center;
-      z-index: 11;
-      background: rgba(8,2,32,0.14);
-      padding: 0.7em 0 0.25em 0;
-      pointer-events: none;
-    }
-    .footer-text {
-      animation: float 3.5s ease-in-out infinite, flicker 2.2s infinite alternate;
-      color: #fff;
-      font-size: 1.25em;
-      letter-spacing: 0.06em;
-      text-shadow: 0 0 10px #ff00de77;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0);}
-      50% { transform: translateY(-10px);}
-    }
-
-    /* Modal zoom imagen */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      padding-top: 40px;
-      left: 0; top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background: rgba(30,0,36,0.95);
-      animation: fadeInModal 0.5s;
-      transition: opacity 0.3s;
-    }
-    @keyframes fadeInModal {
-      from { opacity: 0;}
-      to   { opacity: 1;}
-    }
-    .modal-content {
-      margin: auto;
-      display: block;
-      width: 60vw;
-      max-width: 420px;
-      border-radius: 12px;
-      box-shadow: 0 0 38px #ff00de88;
-      animation: popImg 0.8s;
-    }
-    .close {
-      color: #fff;
-      position: absolute;
-      top: 24px;
-      right: 46px;
-      font-size: 48px;
-      font-weight: bold;
-      cursor: pointer;
-      filter: drop-shadow(0 0 8px #007bff);
-      animation: flicker 2s infinite alternate;
-    }
-
-    /* Gif saludando */
-    #greeting-gif {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      width: 85px;
-      height: auto;
-      z-index: 9999;
-      animation: waveHand 2.5s infinite alternate;
-      pointer-events: none;
-      user-select: none;
-      filter: drop-shadow(0 0 12px #007bff99);
-    }
-    @keyframes waveHand {
-      0% { transform: rotate(-7deg) scale(1);}
-      30% { transform: rotate(7deg) scale(1.07);}
-      60% { transform: rotate(-7deg) scale(1.02);}
-      100% { transform: rotate(-2deg) scale(1);}
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="particles-js"></div>
+  
   <div id="presentation">
     <span class="presentation-title">Fancy Services</span>
   </div>
-  <h1 class="neon-text" id="main-title">🔥 Fancy Stock 🔥</h1>
-  <div class="gallery">
-    <div class="card">
-      <img src="https://i.imgur.com/e4LerPe.png" class="zoomable" alt="Valorant Account">
-      <h2>NA | ASCENDANT</h2>
-      <p>✅ Na | 6 skins | Firefront "RGX 11Z Pro" | Vandal "Kuron" | Vandal "Primary" | Phantom "Champions 2024"<br>💰 Precio: $80</p>
-      <p class="garantia">🔒 Garantía de 2 semanas</p>
-      <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-    </div>
-    <div class="card">
-      <img src="https://i.imgur.com/aJwCcG9.png" class="zoomable" alt="Valorant Account">
-      <h2>LATAM | Plata 3</h2>
-      <p>✅LA | 90 | Skins + 7 Cuchillos + 12 Paid | VCT 2025 Karambit, Forsaken Ritual Blade<br>💰 Precio: $100</p>
-      <p class="garantia">🔒 Garantía de 2 semanas</p>
-      <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-    </div>
-    <div class="card">
-      <img src="https://i.imgur.com/TQHajWR.png" class="zoomable" alt="Valorant Account">
-      <h2>NA | Lista para Rank</h2>
-      <p>✅NA | 13 | Skins + 1 Cuchillo + 5 Paid | Luxe Knife<br>💰 Precio: $100</p>
-      <p class="garantia">🔒 Garantía de 2 semanas</p>
-      <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-    </div>
-    <div class="card">
-      <img src="https://i.imgur.com/7iVY3WE.png" class="zoomable" alt="Valorant Account">
-      <h2>NA | Ascendente (BANEADA HASTA EL 15 DE AGOSTO DE 2025)</h2>
-      <p>✅NA | 100 SKIins | 5 Cuchillos | Karambit "Speed" | Operator "Harbinger of Chaos"<br>💰 Precio: $120</p>
-      <p class="garantia">🔒 Garantía de 2 semanas</p>
-      <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-    </div>
-    <div class="card">
-      <img src="https://i.imgur.com/QhjU7fh.png" class="zoomable" alt="Valorant Account">
-      <h2>AP | Oro 2</h2>
-      <p>✅AP | 18 Skins | 3 Cuchillos | VCT LOCK//IN Misericórdia<br>💰 Precio: $80</p>
-      <p class="garantia">🔒 Garantía de 2 semanas</p>
-      <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-    </div>
-    <div class="card">
-      <img src="https://i.imgur.com/9nmXW0U.png" class="zoomable" alt="Valorant Account">
-      <h2>NA | Lista Para Rank</h2>
-      <p>✅NA | Todo el paquete kuronami<br>💰 Precio: $100</p>
-      <p class="garantia">🔒 Garantía de 2 semanas</p>
-      <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-    </div>
-    <div class="card">
-      <img src="https://i.imgur.com/ynl6YB8.png" class="zoomable" alt="Valorant Account">
-      <h2>LATAM | SILVER 3</h2>
-      <p>✅LATAM | 144 Skins + 10 Knife | Arcane Sheriff| 81k vp value<br>💰 Precio: $50</p>
-      <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-    </div>
-    <div class="card">
-      <img src="https://i.imgur.com/PjHeS9i.png" class="zoomable" alt="Valorant Account">
-      <h2>BRAZIL | READY FOR RANK</h2>
-      <p>✅BR | 144 | Skins + 9 Knives + 28 Paid | Glitchpop Axe, Origin Crescent Blade, Recon Balisong, Ion Karambit| 64k vp value<br>💰 Precio: $100</p>
-      <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-    </div>
-    <div class="card">
-      <img src="https://cdn.discordapp.com/attachments/1358672920846667826/1375976377555091466/IMG_3556.jpg" class="zoomable" alt="Fortnite Account">
-      <h2>Fortnite Full exclusive</h2>
-      <p>💰 Precio: $250</p>
-      <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-    </div>
-    <div class="card">
-      <img src="https://cdn.discordapp.com/attachments/1369168307554615336/1375989794638925845/IMG_3573.png" class="zoomable" alt="Valorant Account">
-      <h2>LATAM | Inmortal 3 | Full Exo Vandal, Full CYRAX pack</h2>
-      <p>💰 Precio: $220</p>
-      <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-    </div>
+
+  <div class="nav-container">
+    <nav class="navbar">
+      <a href="#accounts" class="nav-link active" onclick="switchSection('accounts')">Cuentas</a>
+      <a href="#cheats" class="nav-link" onclick="switchSection('cheats')">Cheats</a>
+      <a href="#support" class="nav-link" onclick="switchSection('support')">Soporte</a>
+    </nav>
   </div>
 
-  <!-- Modal Zoom Imagen -->
-  <div id="image-modal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modal-img">
+  <div class="main-container">
+    <!-- Sección de Cuentas -->
+    <section id="accounts" class="section active">
+      <h1 class="neon-text" id="main-title">🔥 Fancy Stock 🔥</h1>
+      <div class="gallery">
+        <div class="card">
+          <img src="https://i.imgur.com/e4LerPe.png" class="zoomable" alt="Valorant Account">
+          <h2>NA | ASCENDANT</h2>
+          <p>✅ Na | 6 skins | Firefront "RGX 11Z Pro" | Vandal "Kuron" | Vandal "Primary" | Phantom "Champions 2024"<br>💰 Precio: $80</p>
+          <p class="garantia">🔒 Garantía de 2 semanas</p>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/aJwCcG9.png" class="zoomable" alt="Valorant Account">
+          <h2>LATAM | Plata 3</h2>
+          <p>✅LA | 90 | Skins + 7 Cuchillos + 12 Paid | VCT 2025 Karambit, Forsaken Ritual Blade<br>💰 Precio: $100</p>
+          <p class="garantia">🔒 Garantía de 2 semanas</p>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/TQHajWR.png" class="zoomable" alt="Valorant Account">
+          <h2>NA | Lista para Rank</h2>
+          <p>✅NA | 13 | Skins + 1 Cuchillo + 5 Paid | Luxe Knife<br>💰 Precio: $100</p>
+          <p class="garantia">🔒 Garantía de 2 semanas</p>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/7iVY3WE.png" class="zoomable" alt="Valorant Account">
+          <h2>NA | Ascendente (BANEADA HASTA EL 15 DE AGOSTO DE 2025)</h2>
+          <p>✅NA | 100 SKIins | 5 Cuchillos | Karambit "Speed" | Operator "Harbinger of Chaos"<br>💰 Precio: $120</p>
+          <p class="garantia">🔒 Garantía de 2 semanas</p>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/QhjU7fh.png" class="zoomable" alt="Valorant Account">
+          <h2>AP | Oro 2</h2>
+          <p>✅AP | 18 Skins | 3 Cuchillos | VCT LOCK//IN Misericórdia<br>💰 Precio: $80</p>
+          <p class="garantia">🔒 Garantía de 2 semanas</p>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/9nmXW0U.png" class="zoomable" alt="Valorant Account">
+          <h2>NA | Lista Para Rank</h2>
+          <p>✅NA | Todo el paquete kuronami<br>💰 Precio: $100</p>
+          <p class="garantia">🔒 Garantía de 2 semanas</p>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/ynl6YB8.png" class="zoomable" alt="Valorant Account">
+          <h2>LATAM | SILVER 3</h2>
+          <p>✅LATAM | 144 Skins + 10 Knife | Arcane Sheriff| 81k vp value<br>💰 Precio: $50</p>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/PjHeS9i.png" class="zoomable" alt="Valorant Account">
+          <h2>BRAZIL | READY FOR RANK</h2>
+          <p>✅BR | 144 | Skins + 9 Knives + 28 Paid | Glitchpop Axe, Origin Crescent Blade, Recon Balisong, Ion Karambit| 64k vp value<br>💰 Precio: $100</p>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
+        </div>
+        <div class="card">
+          <img src="https://cdn.discordapp.com/attachments/1358672920846667826/1375976377555091466/IMG_3556.jpg" class="zoomable" alt="Fortnite Account">
+          <h2>Fortnite Full exclusive</h2>
+          <p>💰 Precio: $250</p>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
+        </div>
+        <div class="card">
+          <img src="https://cdn.discordapp.com/attachments/1369168307554615336/1375989794638925845/IMG_3573.png" class="zoomable" alt="Valorant Account">
+          <h2>LATAM | Inmortal 3 | Full Exo Vandal, Full CYRAX pack</h2>
+          <p>💰 Precio: $220</p>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Cheats -->
+    <section id="cheats" class="section">
+      <h1 class="neon-text">💫 Fancy Cheats 💫</h1>
+      <div class="cheats-container">
+        <div class="cheat-card">
+          <h2 class="cheat-title">🎯 Valorant Premium Cheat</h2>
+          <ul class="cheat-features">
+            <li>COLOR-MENU - Personalización completa de la interfaz</li>
+            <li>AIM-LOCK - Sistema de apuntado preciso</li>
+            <li>UNLOCK-ALL - Desbloqueo de contenido</li>
+            <li>VANGUARD-OFF - Bypass del sistema anti-cheat</li>
+            <li>BYPASS-CHEAT - Sistema anti-detección avanzado</li>
+            <li>Soporte 24/7 vía Discord</li>
+          </ul>
+          <div class="cheat-price">💰 Precio: $25/semana</div>
+          <a href="#" class="buy-button" onclick="showPurchaseModal('Valorant Premium')">Comprar Ahora</a>
+        </div>
+
+        <div class="cheat-card">
+          <h2 class="cheat-title">🎮 Fortnite VIP Cheat</h2>
+          <ul class="cheat-features">
+            <li>FORTNITE-EXT - Funciones externas avanzadas</li>
+            <li>FORTNITE-PRIVATE - Modo privado exclusivo</li>
+            <li>BYPASS-POP-UP - Eliminación de advertencias</li>
+            <li>COLOR-MENU - Menú personalizable</li>
+            <li>UNLOCK-ALL - Acceso a todos los items</li>
+            <li>solo-visuales - Opciones visuales seguras</li>
+          </ul>
+          <div class="cheat-price">💰 Precio: $30/semana</div>
+          <a href="#" class="buy-button" onclick="showPurchaseModal('Fortnite VIP')">Comprar Ahora</a>
+        </div>
+
+        <div class="cheat-card">
+          <h2 class="cheat-title">🛡️ Bypass Premium Pack</h2>
+          <ul class="cheat-features">
+            <li>BYPASS-CHEAT - Sistema anti-detección principal</li>
+            <li>BYPASS-POP-UP - Eliminador de alertas</li>
+            <li>VANGUARD-OFF - Desactivación de protección</li>
+            <li>intocable - Modo invisible mejorado</li>
+            <li>Actualizaciones diarias automáticas</li>
+            <li>Soporte prioritario 24/7</li>
+          </ul>
+          <div class="cheat-price">💰 Precio: $35/semana</div>
+          <a href="#" class="buy-button" onclick="showPurchaseModal('Bypass Premium')">Comprar Ahora</a>
+        </div>
+
+        <div class="cheat-card">
+          <h2 class="cheat-title">🎨 Visual Enhancement Pack</h2>
+          <ul class="cheat-features">
+            <li>COLOR-MENU - Personalización visual completa</li>
+            <li>solo-visuales - Mejoras visuales seguras</li>
+            <li>AIM-LOCK - Asistencia de puntería suave</li>
+            <li>intocable - Modo sigiloso</li>
+            <li>Configuración personalizada</li>
+            <li>Actualizaciones semanales</li>
+          </ul>
+          <div class="cheat-price">💰 Precio: $20/semana</div>
+          <a href="#" class="buy-button" onclick="showPurchaseModal('Visual Enhancement')">Comprar Ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Soporte -->
+    <section id="support" class="section">
+      <h1 class="neon-text">🛟 Soporte 24/7 🛟</h1>
+      <div class="cheats-container">
+        <div class="cheat-card">
+          <h2 class="cheat-title">Contacto Discord</h2>
+          <p style="color: #fff; font-size: 1.2rem; margin: 1rem 0;">
+            Nuestro equipo de soporte está disponible 24/7 para ayudarte con cualquier duda o problema.
+          </p>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Unirse al Discord</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal de Compra -->
+  <div class="purchase-modal" id="purchaseModal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closePurchaseModal()">&times;</span>
+      <h2 class="cheat-title" id="modalTitle">Comprar Cheat</h2>
+      <p style="color: #fff; margin: 1rem 0;">Para completar tu compra, por favor contacta con nosotros en Discord:</p>
+      <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Ir a Discord</a>
+    </div>
   </div>
 
   <footer>
     <p class="footer-text"><strong>Stock de mayo</strong></p>
   </footer>
 
-  <!-- Gif saludando -->
   <img src="https://media.giphy.com/media/ASd0Ukj0y3qMM/giphy.gif" alt="Saludando" id="greeting-gif">
 
-  <!-- Particles.js library -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
-    // Presentación de entrada
-    window.addEventListener('DOMContentLoaded', function() {
-      const pres = document.getElementById('presentation');
-      const title = document.querySelector('.presentation-title');
-      setTimeout(() => { title.style.opacity = '1'; title.style.filter = 'blur(0)'; }, 180);
-      setTimeout(() => {
-        pres.classList.add('hide');
-        document.getElementById('main-title').classList.remove('hide-title');
-      }, 2200);
-    });
-    document.getElementById('main-title').classList.add('hide-title');
-
-    // Particles.js
+    // Particles.js config
     particlesJS("particles-js", {
       "particles": {
         "number": { "value": 60, "density": { "enable": true, "value_area": 800 }},
@@ -460,19 +219,49 @@
       "retina_detect": true
     });
 
-    // Modal Zoom Imagen para cards
-    document.querySelectorAll('.zoomable').forEach(img => {
-      img.addEventListener('click', function(){
-        document.getElementById('image-modal').style.display = "block";
-        document.getElementById('modal-img').src = this.src;
-      });
+    // Presentación inicial
+    window.addEventListener('DOMContentLoaded', function() {
+      const pres = document.getElementById('presentation');
+      const title = document.querySelector('.presentation-title');
+      setTimeout(() => { title.style.opacity = '1'; title.style.filter = 'blur(0)'; }, 180);
+      setTimeout(() => {
+        pres.classList.add('hide');
+        document.getElementById('main-title').classList.remove('hide-title');
+      }, 2200);
     });
-    document.querySelector('.close').onclick = function() {
-      document.getElementById('image-modal').style.display = "none";
+
+    // Navegación
+    function switchSection(sectionId) {
+      // Remover clase active de todas las secciones y links
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+      });
+
+      // Activar la sección y link correspondiente
+      document.getElementById(sectionId).classList.add('active');
+      document.querySelector(`[href="#${sectionId}"]`).classList.add('active');
     }
+
+    // Modal de compra
+    function showPurchaseModal(product) {
+      const modal = document.getElementById('purchaseModal');
+      const modalTitle = document.getElementById('modalTitle');
+      modalTitle.textContent = `Comprar ${product}`;
+      modal.style.display = 'flex';
+    }
+
+    function closePurchaseModal() {
+      document.getElementById('purchaseModal').style.display = 'none';
+    }
+
+    // Cerrar modal al hacer clic fuera
     window.onclick = function(event) {
-      if (event.target == document.getElementById('image-modal')) {
-        document.getElementById('image-modal').style.display = "none";
+      const modal = document.getElementById('purchaseModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
       }
     }
   </script>
