@@ -94,16 +94,27 @@ body {
     opacity: 1;
   }
 }
-/* Estilo básico del título */
-h1.typewriter {
-  font-family: 'Courier New', Courier, monospace;
+.mirror-effect {
+  font-family: 'Arial', sans-serif;
   font-size: 3rem;
   color: #007BFF;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid #007BFF;
-  width: 0;
-  animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
+.mirror-effect::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: rgba(0, 123, 255, 0.5);
+  transform: scaleY(-1);
+  transform-origin: top;
+  filter: blur(2px);
+  opacity: 0.5;
+}
+
 }
 
 /* Animación de escritura */
