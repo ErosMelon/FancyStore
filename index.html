@@ -18,6 +18,8 @@
     <nav class="navbar">
       <a href="#accounts" class="nav-link active" onclick="switchSection('accounts')">Cuentas</a>
       <a href="#cheats" class="nav-link" onclick="switchSection('cheats')">Cheats</a>
+      <a href="#status" class="nav-link" onclick="switchSection('status')">Status</a>
+      <a href="#payment" class="nav-link" onclick="switchSection('payment')">Formas de Pago</a>
       <a href="#support" class="nav-link" onclick="switchSection('support')">Soporte</a>
     </nav>
   </div>
@@ -100,26 +102,6 @@
     <section id="cheats" class="section">
       <h1 class="neon-text">💫 Fancy Cheats 💫</h1>
       
-      <div class="cheat-status-container">
-        <div class="status-card">
-          <h3>Valorant Cheat</h3>
-          <div class="status-indicator active">
-            <span class="status-dot"></span>
-            <span class="status-text">Activo</span>
-          </div>
-          <p class="status-update">Última actualización: 26/03/2024</p>
-        </div>
-        
-        <div class="status-card">
-          <h3>Fortnite Cheat</h3>
-          <div class="status-indicator active">
-            <span class="status-dot"></span>
-            <span class="status-text">Activo</span>
-          </div>
-          <p class="status-update">Última actualización: 26/03/2024</p>
-        </div>
-      </div>
-
       <div class="cheats-container">
         <div class="cheat-card">
           <h2 class="cheat-title">🎯 Valorant Premium Cheat</h2>
@@ -179,6 +161,122 @@
       </div>
     </section>
 
+    <!-- Sección de Status -->
+    <section id="status" class="section">
+      <h1 class="neon-text">🔮 Estado del Servicio 🔮</h1>
+      
+      <div class="cheat-status-container">
+        <div class="status-card">
+          <div class="status-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Valorant Cheat</h3>
+          <div class="status-indicator active">
+            <span class="status-dot"></span>
+            <span class="status-text">Online</span>
+          </div>
+          <div class="status-details">
+            <div class="detail-item">
+              <i class="fas fa-clock"></i>
+              <span>Última actualización</span>
+              <p>26/03/2024</p>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-users"></i>
+              <span>Usuarios activos</span>
+              <p>147</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="status-card">
+          <div class="status-icon">
+            <i class="fas fa-gamepad"></i>
+          </div>
+          <h3>Fortnite Cheat</h3>
+          <div class="status-indicator active">
+            <span class="status-dot"></span>
+            <span class="status-text">Online</span>
+          </div>
+          <div class="status-details">
+            <div class="detail-item">
+              <i class="fas fa-clock"></i>
+              <span>Última actualización</span>
+              <p>26/03/2024</p>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-users"></i>
+              <span>Usuarios activos</span>
+              <p>93</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Formas de Pago -->
+    <section id="payment" class="section">
+      <h1 class="neon-text">💳 Métodos de Pago 💳</h1>
+      
+      <div class="payment-container">
+        <div class="payment-card">
+          <div class="payment-icon">
+            <i class="fab fa-bitcoin"></i>
+          </div>
+          <h3>Crypto</h3>
+          <div class="payment-details">
+            <p>Aceptamos las siguientes criptomonedas:</p>
+            <ul>
+              <li><i class="fab fa-bitcoin"></i> Bitcoin (BTC)</li>
+              <li><i class="fab fa-ethereum"></i> Ethereum (ETH)</li>
+              <li><i class="fas fa-coins"></i> USDT</li>
+            </ul>
+            <p class="payment-note">Proceso rápido y seguro</p>
+          </div>
+        </div>
+
+        <div class="payment-card">
+          <div class="payment-icon">
+            <i class="fas fa-money-bill-wave"></i>
+          </div>
+          <h3>Transferencias</h3>
+          <div class="payment-details">
+            <p>Aceptamos transferencias en:</p>
+            <ul>
+              <li><i class="fas fa-university"></i> Transferencia Bancaria</li>
+              <li><i class="fas fa-money-bill-wave"></i> Wise</li>
+              <li><i class="fas fa-exchange-alt"></i> PayPal</li>
+            </ul>
+            <p class="payment-note">Proceso seguro con comprobante</p>
+          </div>
+        </div>
+
+        <div class="payment-card">
+          <div class="payment-icon">
+            <i class="fas fa-gift"></i>
+          </div>
+          <h3>Gift Cards</h3>
+          <div class="payment-details">
+            <p>Aceptamos tarjetas de regalo:</p>
+            <ul>
+              <li><i class="fab fa-steam"></i> Steam</li>
+              <li><i class="fab fa-amazon"></i> Amazon</li>
+              <li><i class="fas fa-gamepad"></i> PlayStation</li>
+              <li><i class="fab fa-xbox"></i> Xbox</li>
+            </ul>
+            <p class="payment-note">Valor según tasa del día</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-info">
+        <p class="info-text">Para realizar tu pago, contacta con nosotros en Discord y especifica tu método preferido</p>
+        <a href="https://discord.gg/fancyservices" target="_blank" class="payment-button">
+          <i class="fab fa-discord"></i> Contactar para pagar
+        </a>
+      </div>
+    </section>
+
     <!-- Sección de Soporte -->
     <section id="support" class="section">
       <h1 class="neon-text">🛟 Soporte 24/7 🛟</h1>
@@ -218,6 +316,15 @@
     <span class="modal-close">&times;</span>
     <img class="modal-content" id="modalImage">
     <div id="modalCaption"></div>
+  </div>
+
+  <!-- Notificación de compra -->
+  <div id="purchaseNotification" class="purchase-notification">
+    <i class="fas fa-shopping-cart notification-icon"></i>
+    <div class="notification-content">
+      <p class="notification-title">¡Nueva compra!</p>
+      <p class="notification-text"></p>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
@@ -344,6 +451,55 @@
       targetSection.classList.add('active');
       targetLink.classList.add('active');
     }
+
+    // Configuración de notificaciones de compra
+    const locations = [
+      "Buenos Aires, Argentina",
+      "São Paulo, Brasil",
+      "Santiago, Chile",
+      "Bogotá, Colombia",
+      "Lima, Perú",
+      "Caracas, Venezuela",
+      "Ciudad de México, México",
+      "Montevideo, Uruguay",
+      "Asunción, Paraguay",
+      "La Paz, Bolivia",
+      "Quito, Ecuador",
+      "San José, Costa Rica",
+      "Ciudad de Panamá, Panamá",
+      "Santo Domingo, República Dominicana",
+      "Guatemala City, Guatemala"
+    ];
+
+    const products = [
+      "cuenta Valorant Ascendant",
+      "cuenta Fortnite Full Exclusive",
+      "cuenta Valorant con 90 skins",
+      "cuenta LATAM Silver",
+      "cheat premium Valorant",
+      "cheat VIP Fortnite",
+      "cuenta NA con RGX Pro"
+    ];
+
+    function showPurchaseNotification() {
+      const location = locations[Math.floor(Math.random() * locations.length)];
+      const product = products[Math.floor(Math.random() * products.length)];
+      const notification = document.getElementById('purchaseNotification');
+      const notificationText = notification.querySelector('.notification-text');
+      
+      notificationText.textContent = `Alguien de ${location} compró una ${product}`;
+      
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 4000);
+    }
+
+    // Mostrar notificación cada 3 minutos
+    setInterval(showPurchaseNotification, 180000);
+    // Mostrar primera notificación después de 10 segundos
+    setTimeout(showPurchaseNotification, 10000);
   </script>
 </body>
 </html>
