@@ -94,5 +94,31 @@ body {
     opacity: 1;
   }
 }
+/* Estilo básico del título */
+h1.typewriter {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3rem;
+  color: #007BFF;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #007BFF;
+  width: 0;
+  animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+}
+
+/* Animación de escritura */
+@keyframes typing {
+  to {
+    width: 100%;
+  }
+}
+
+/* Parpadeo del cursor */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 
 
