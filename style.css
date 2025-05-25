@@ -91,6 +91,7 @@ body {
 
 @keyframes fadeIn {
   to {
+    
     opacity: 1;
   }
 .neon-text {
