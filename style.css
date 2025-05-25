@@ -83,4 +83,16 @@ body {
   font-size: 2em; /* Aumentado el tamaño */
   color: #007BFF; /* Azul brillante */
 }
+/* Aplica el efecto de fade-in al cargar la página */
+body {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
 
