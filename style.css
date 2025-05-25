@@ -103,6 +103,15 @@ body {
   display: inline-block;
 }
 
+.mirror-effect {
+  font-family: 'Arial', sans-serif;
+  font-size: 3rem;
+  color: #007BFF;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
 .mirror-effect::after {
   content: attr(data-text);
   position: absolute;
@@ -115,21 +124,6 @@ body {
   opacity: 0.5;
 }
 
-}
-
-/* Animación de escritura */
-@keyframes typing {
-  to {
-    width: 100%;
-  }
-}
-
-/* Parpadeo del cursor */
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
 
 
 
