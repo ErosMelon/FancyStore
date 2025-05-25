@@ -235,6 +235,58 @@
       0%, 100% { transform: translateY(0);}
       50%      { transform: translateY(-6px);}
     }
+
+    /* Cheats & Support sections */
+    .custom-section {
+      margin: 60px auto 30px auto;
+      padding: 36px 28px 28px 28px;
+      background: rgba(34,0,50,0.90);
+      border-radius: 32px;
+      box-shadow: 0 4px 48px #ff00de33;
+      max-width: 700px;
+      text-align: center;
+      position: relative;
+      z-index: 12;
+    }
+    .custom-section h2 {
+      font-size: 2.1em;
+      color: #ff00de;
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+      text-shadow: 0 0 16px #ff00de73, 0 0 6px #fff;
+      font-weight: 800;
+      animation: pulseText 2s infinite alternate;
+    }
+    .custom-section p {
+      color: #fff;
+      font-size: 1.12em;
+      margin-bottom: 12px;
+      line-height: 1.6;
+      text-shadow: 0 0 6px #007bff88;
+    }
+    .section-btn {
+      background: linear-gradient(90deg, #ff00de 0%, #007bff 100%);
+      color: white;
+      padding: 12px 36px;
+      border: none;
+      border-radius: 48px;
+      font-size: 1.13em;
+      font-weight: bold;
+      margin-top: 12px;
+      box-shadow: 0 0 20px 2px #ff00de44;
+      cursor: pointer;
+      transition: filter 0.18s, box-shadow 0.18s;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 6px;
+      animation: btnShine 1.6s infinite alternate;
+    }
+    .section-btn:hover {
+      filter: brightness(1.14) saturate(1.2);
+      box-shadow: 0 0 40px 8px #007bff99, 0 0 52px 6px #ff00de66;
+      animation: none;
+    }
+
     footer {
       position: fixed;
       width: 100vw;
@@ -366,6 +418,21 @@
       <a href="https://discord.gg/PKKrqnQEst" target="_blank" class="buy-button">Contact on Discord</a>
     </div>
   </div>
+
+  <!-- Cheats Section -->
+  <section class="custom-section" id="cheats-section">
+    <h2>Cheats</h2>
+    <p>¿Buscas una ventaja en tu juego? Descubre nuestros <strong>cheats</strong> exclusivos para Valorant y otros títulos. Seguridad, actualización constante y soporte personalizado.</p>
+    <a href="https://discord.gg/PKKrqnQEst" class="section-btn" target="_blank">Solicitar Cheats</a>
+  </section>
+
+  <!-- Support Section -->
+  <section class="custom-section" id="soporte-section">
+    <h2>Soporte</h2>
+    <p>¿Tienes dudas, problemas con tu cuenta o necesitas ayuda con alguna compra? Nuestro equipo de <strong>soporte</strong> está disponible para ayudarte 24/7.</p>
+    <a href="https://discord.gg/PKKrqnQEst" class="section-btn" target="_blank">Contactar Soporte</a>
+  </section>
+
   <footer>
     <p class="footer-text"><strong>Stock de mayo</strong></p>
   </footer>
