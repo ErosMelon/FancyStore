@@ -9,9 +9,44 @@
 <body>
   <div id="particles-js"></div>
   
-  <div id="presentation">
-    <span class="presentation-title">Fancy Services</span>
+  <div class="nav-container">
+    <nav class="navbar">
+      <a href="#accounts" class="nav-link active" onclick="switchSection('accounts')">Cuentas</a>
+      <a href="#cheats" class="nav-link" onclick="switchSection('cheats')">Cheats</a>
+      <a href="#support" class="nav-link" onclick="switchSection('support')">Soporte</a>
+    </nav>
   </div>
+
+  <div class="main-container">
+    <!-- Sección de Cuentas -->
+    <section id="accounts" class="section active">
+      <h1 class="neon-text" id="main-title">🔥 Fancy Stock 🔥</h1>
+      <div class="gallery">
+        <div class="card">
+          <img src="https://i.imgur.com/e4LerPe.png" class="zoomable" alt="Valorant Account">
+          <h2>NA | ASCENDANT</h2>
+          <p>✅ Na | 6 skins | Firefront "RGX 11Z Pro" | Vandal "Kuron" | Vandal "Primary" | Phantom "Champions 2024"<br>💰 Precio: $80</p>
+          <p class="garantia">🔒 Garantía de 2 semanas</p>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/aJwCcG9.png" class="zoomable" alt="Valorant Account">
+          <h2>LATAM | Plata 3</h2>
+          <p>✅LA | 90 | Skins + 7 Cuchillos + 12 Paid | VCT 2025 Karambit, Forsaken Ritual Blade<br>💰 Precio: $100</p>
+          <p class="garantia">🔒 Garantía de 2 semanas</p>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/TQHajWR.png" class="zoomable" alt="Valorant Account">
+          <h2>NA | Lista para Rank</h2>
+          <p>✅NA | 13 | Skins + 1 Cuchillo + 5 Paid | Luxe Knife<br>💰 Precio: $100</p>
+          <p class="garantia">🔒 Garantía de 2 semanas</p>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
+        </div>
+        <div class="card">
+          <img src="https://i.imgur.com/7iVY3WE.png" class="zoomable" alt="Valorant Account">
+          <h2>NA | Ascendente (BANEADA HASTA EL 15 DE AGOSTO DE 2025)</h2>
+          <p>✅NA | 100 SKIins | 5 Cuchillos | Karambit "Speed" | Operator "Harbinger of Chaos"<br>💰 Precio: $120</p>
           <p class="garantia">🔒 Garantía de 2 semanas</p>
           <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
         </div>
@@ -71,7 +106,7 @@
             <li>Soporte 24/7 vía Discord</li>
           </ul>
           <div class="cheat-price">💰 Precio: $25/semana</div>
-          <a href="#" class="buy-button" onclick="showPurchaseModal('Valorant Premium')">Comprar Ahora</a>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Comprar Ahora</a>
         </div>
 
         <div class="cheat-card">
@@ -85,7 +120,7 @@
             <li>solo-visuales - Opciones visuales seguras</li>
           </ul>
           <div class="cheat-price">💰 Precio: $30/semana</div>
-          <a href="#" class="buy-button" onclick="showPurchaseModal('Fortnite VIP')">Comprar Ahora</a>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Comprar Ahora</a>
         </div>
 
         <div class="cheat-card">
@@ -99,7 +134,7 @@
             <li>Soporte prioritario 24/7</li>
           </ul>
           <div class="cheat-price">💰 Precio: $35/semana</div>
-          <a href="#" class="buy-button" onclick="showPurchaseModal('Bypass Premium')">Comprar Ahora</a>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Comprar Ahora</a>
         </div>
 
         <div class="cheat-card">
@@ -113,41 +148,11 @@
             <li>Actualizaciones semanales</li>
           </ul>
           <div class="cheat-price">💰 Precio: $20/semana</div>
-          <a href="#" class="buy-button" onclick="showPurchaseModal('Visual Enhancement')">Comprar Ahora</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección de Soporte -->
-    <section id="support" class="section">
-      <h1 class="neon-text">🛟 Soporte 24/7 🛟</h1>
-      <div class="cheats-container">
-        <div class="cheat-card">
-          <h2 class="cheat-title">Contacto Discord</h2>
-          <p style="color: #fff; font-size: 1.2rem; margin: 1rem 0;">
-            Nuestro equipo de soporte está disponible 24/7 para ayudarte con cualquier duda o problema.
-          </p>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Unirse al Discord</a>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Comprar Ahora</a>
         </div>
       </div>
     </section>
   </div>
-
-  <!-- Modal de Compra -->
-  <div class="purchase-modal" id="purchaseModal">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closePurchaseModal()">&times;</span>
-      <h2 class="cheat-title" id="modalTitle">Comprar Cheat</h2>
-      <p style="color: #fff; margin: 1rem 0;">Para completar tu compra, por favor contacta con nosotros en Discord:</p>
-      <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Ir a Discord</a>
-    </div>
-  </div>
-
-  <footer>
-    <p class="footer-text"><strong>Stock de mayo</strong></p>
-  </footer>
-
-  <img src="https://media.giphy.com/media/ASd0Ukj0y3qMM/giphy.gif" alt="Saludando" id="greeting-gif">
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
@@ -179,61 +184,18 @@
       },
       "retina_detect": true
     });
-    });
-
-    // Presentación inicial
-      const pres = document.getElementById('presentation');
-      const title = document.querySelector('.presentation-title');
-      setTimeout(() => { title.style.opacity = '1'; title.style.filter = 'blur(0)'; }, 180);
-      setTimeout(() => {
-        pres.classList.add('hide');
-        document.getElementById('main-title').classList.remove('hide-title');
-      }, 2200);
-    });
 
     // Navegación
     function switchSection(sectionId) {
-      // Remover clase active de todas las secciones y links
       document.querySelectorAll('.section').forEach(section => {
         section.classList.remove('active');
       });
       document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
       });
-
-      // Activar la sección y link correspondiente
       document.getElementById(sectionId).classList.add('active');
       document.querySelector(`[href="#${sectionId}"]`).classList.add('active');
     }
-
-    // Modal de compra
-    function showPurchaseModal(product) {
-      const modal = document.getElementById('purchaseModal');
-      const modalTitle = document.getElementById('modalTitle');
-      modalTitle.textContent = `Comprar ${product}`;
-      modal.style.display = 'flex';
-    }
-
-    function closePurchaseModal() {
-      document.getElementById('purchaseModal').style.display = 'none';
-    }
-
-    // Cerrar modal al hacer clic fuera
-    window.onclick = function(event) {
-      const modal = document.getElementById('purchaseModal');
-      if (event.target == modal) {
-        modal.style.display = 'none';
-      }
-    }
-
-    // Modal zoom para imágenes
-    document.querySelectorAll('.zoomable').forEach(img => {
-      img.style.cursor = 'zoom-in';
-      img.onclick = function() {
-        const modal = document.getElementById('purchaseModal');
-        modal.style.display = 'flex';
-      }
-    });
   </script>
 </body>
 </html>
