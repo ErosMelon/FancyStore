@@ -1,0 +1,25 @@
+{
+  "name": "fancy-services",
+  "version": "1.0.0",
+  "description": "Fancy Services - Tienda de cuentas y servicios",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve",
+    "dev": "serve -l 3000"
+  },
+  "keywords": [
+    "valorant",
+    "fortnite",
+    "accounts",
+    "gaming"
+  ],
+  "author": "monepii",
+  "license": "MIT",
+  "dependencies": {
+    "particles.js": "^2.0.0",
+    "serve": "^14.2.1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+} 
