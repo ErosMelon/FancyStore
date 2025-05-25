@@ -4,221 +4,15 @@
   <meta charset="UTF-8">
   <title>Valorant Accounts for Sale</title>
   <link rel="icon" href="logo.png" type="image/png">
-  <link rel="stylesheet" href="style.css">
   <style>
-    /* --- ANIMACIONES AGREGADAS --- */
-
-    /* Neon parpadeante para el título */
-    .neon-text {
-      color: #fff;
-      text-shadow:
-        0 0 5px #fff,
-        0 0 10px #ff00de,
-        0 0 20px #ff00de,
-        0 0 40px #ff00de,
-        0 0 80px #ff00de;
-      animation: flicker 1.5s infinite alternate;
-    }
-    @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; text-shadow: 0 0 20px #ff00de; }
-    }
-
-    /* Animación de entrada para las cards */
-    .card {
-      opacity: 0;
-      transform: translateY(50px) scale(0.95);
-      animation: cardFadeIn 1s forwards;
-    }
-    .card:nth-child(1) { animation-delay: 0.1s; }
-    .card:nth-child(2) { animation-delay: 0.2s; }
-    .card:nth-child(3) { animation-delay: 0.3s; }
-    .card:nth-child(4) { animation-delay: 0.4s; }
-    .card:nth-child(5) { animation-delay: 0.5s; }
-    .card:nth-child(6) { animation-delay: 0.6s; }
-    .card:nth-child(7) { animation-delay: 0.7s; }
-    .card:nth-child(8) { animation-delay: 0.8s; }
-    .card:nth-child(9) { animation-delay: 0.9s; }
-    .card:nth-child(10) { animation-delay: 1s; }
-    .card:nth-child(11) { animation-delay: 1.1s; }
-    @keyframes cardFadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    /* Zoom animado en imágenes */
-    .zoomable {
-      transition: transform 0.3s cubic-bezier(0.42,0,0.58,1), box-shadow 0.3s;
-      cursor: pointer;
-    }
-    .zoomable:hover {
-      transform: scale(1.08) rotate(-2deg);
-      box-shadow: 0 8px 32px rgba(255,0,222,0.15);
-    }
-
-    /* Botón con efecto de pulso */
-    .buy-button {
-      background-color: #007BFF;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-      animation: pulse 2s infinite;
-    }
-    .buy-button:hover {
-      background-color: #0056b3;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 #007bff66; }
-      70% { box-shadow: 0 0 12px 12px #007bff11; }
-      100% { box-shadow: 0 0 0 0 #007bff66; }
-    }
-
-    /* Footer flotante */
-    .footer-text {
-      animation: float 3s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0);}
-      50% { transform: translateY(-10px);}
-    }
-
-    /* Fondo animado */
-    body {
-      /* Fondo de gradiente animado con partículas */
-      min-height: 100vh;
-      background: linear-gradient(-45deg, #1a003a, #020024, #35004b, #007bff, #ff00de);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      overflow-x: hidden;
-      position: relative;
-    }
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    /* Capa para partículas */
-    #particles-js {
-      position: fixed;
-      z-index: 0;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-    }
-
-    /* Animación de presentación para "Fancy Services" */
-    #presentation {
-      position: fixed;
-      z-index: 10000;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background: rgba(20,4,44,0.89);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.8s;
-      opacity: 1;
-      pointer-events: auto;
-    }
-    #presentation.hide {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.8s, visibility 0s linear 0.8s;
-      visibility: hidden;
-    }
-    .presentation-title {
-      font-size: 4rem;
-      color: #fff;
-      text-shadow:
-        0 0 20px #fff,
-        0 0 40px #ff00de,
-        0 0 80px #007bff;
-      animation: popUpAndMove 1.5s cubic-bezier(0.7,0.2,0.1,1) forwards;
-      opacity: 0;
-    }
-    @keyframes popUpAndMove {
-      0% {
-        opacity: 0;
-        transform: scale(0.85) translateY(40vh);
-        filter: blur(8px);
-      }
-      40% {
-        opacity: 1;
-        transform: scale(1.05) translateY(0);
-        filter: blur(0);
-      }
-      65% {
-        transform: scale(1.02) translateY(0);
-      }
-      85% {
-        transform: scale(1.0) translateY(0);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1.0) translateY(-42vh);
-      }
-    }
-
-    /* El título principal desaparece al hacer la animación */
-    .hide-title {
-      opacity: 0;
-      transition: opacity 0.5s;
-    }
-
-    /* Gif saludando en la esquina inferior derecha */
-    #greeting-gif {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      width: 85px;
-      height: auto;
-      z-index: 9999;
-      animation: waveHand 2.5s infinite alternate;
-      pointer-events: none;
-      user-select: none;
-    }
-    @keyframes waveHand {
-      0% { transform: rotate(-7deg) scale(1); }
-      30% { transform: rotate(7deg) scale(1.04);}
-      60% { transform: rotate(-7deg) scale(1.02);}
-      100% { transform: rotate(-2deg) scale(1);}
-    }
-
-    /* Corrige el gif de la esquina si lo usas */
-    #corner-gif {
-      position: fixed;
-      bottom: 10px;
-      left: 10px;
-      width: 100px; 
-      height: auto;
-      z-index: 9999; 
-    }
-    /* Asegura que la galería y cartas estén por encima del fondo animado */
-    .gallery, footer, .neon-text {
-      position: relative;
-      z-index: 10;
-    }
+    /* ... (deja aquí tus estilos actuales) ... */
   </style>
 </head>
 <body>
-
-  <!-- Fondo animado de partículas -->
-  <div id="particles-js"></div>
-
-  <!-- Animación de presentación -->
-  <div id="presentation">
-    <span class="presentation-title">Fancy Services</span>
-  </div>
+  <!-- ... (deja aquí la animación y el fondo) ... -->
 
   <h1 class="neon-text" id="main-title" style="margin-top: 48px;">🔥 Fancy Stock 🔥</h1>
   <div class="gallery">
-    <!-- account 1-->
     <div class="card">
       <img src="https://i.imgur.com/e4LerPe.png" class="zoomable" alt="Valorant Account">
       <h2>NA | ASCENDANT</h2>
@@ -226,7 +20,6 @@
       <p class="garantia">🔒 Garantía de 2 semanas</p>
       <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
     </div>
-    <!-- account 2-->
     <div class="card">
       <img src="https://i.imgur.com/aJwCcG9.png" class="zoomable" alt="Valorant Account">
       <h2>LATAM | Plata 3</h2>
@@ -234,7 +27,6 @@
       <p class="garantia">🔒 Garantía de 2 semanas</p>
       <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
     </div>
-    <!-- account 3-->
     <div class="card">
       <img src="https://i.imgur.com/TQHajWR.png" class="zoomable" alt="Valorant Account">
       <h2>NA | Lista para Rank</h2>
@@ -242,7 +34,6 @@
       <p class="garantia">🔒 Garantía de 2 semanas</p>
       <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
     </div>
-    <!-- account 4-->
     <div class="card">
       <img src="https://i.imgur.com/7iVY3WE.png" class="zoomable" alt="Valorant Account">
       <h2>NA | Ascendente (BANEADA HASTA EL 15 DE AGOSTO DE 2025)</h2>
@@ -250,7 +41,6 @@
       <p class="garantia">🔒 Garantía de 2 semanas</p>
       <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
     </div>
-    <!-- account 5-->
     <div class="card">
       <img src="https://i.imgur.com/QhjU7fh.png" class="zoomable" alt="Valorant Account">
       <h2>AP | Oro 2</h2>
@@ -258,7 +48,6 @@
       <p class="garantia">🔒 Garantía de 2 semanas</p>
       <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
     </div>
-    <!-- account 6-->
     <div class="card">
       <img src="https://i.imgur.com/9nmXW0U.png" class="zoomable" alt="Valorant Account">
       <h2>NA | Lista Para Rank</h2>
@@ -266,128 +55,32 @@
       <p class="garantia">🔒 Garantía de 2 semanas</p>
       <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
     </div>
-    <!-- account 7-->
     <div class="card">
       <img src="https://i.imgur.com/ynl6YB8.png" class="zoomable" alt="Valorant Account">
       <h2>LATAM | SILVER 3</h2>
       <p>✅LATAM | 144 Skins + 10 Knife | Arcane Sheriff| 81k vp value<br>💰 Precio: $50</p>
       <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
     </div>
-    <!-- account 9-->
     <div class="card">
       <img src="https://i.imgur.com/PjHeS9i.png" class="zoomable" alt="Valorant Account">
       <h2>BRAZIL | READY FOR RANK</h2>
       <p>✅BR | 144 | Skins + 9 Knives + 28 Paid | Glitchpop Axe, Origin Crescent Blade, Recon Balisong, Ion Karambit| 64k vp value<br>💰 Precio: $100</p>
       <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
     </div>
-    <!-- account 10-->
     <div class="card">
-      <img src="https://cdn.discordapp.com/attachments/1358672920846667826/1375976377555091466/IMG_3556.jpg?ex=6833a55c&is=683253dc&hm=76dcff6ab8bfa0df290cc2b79575c84ad64ae27192bfa3d0c9be1abcc2fa2f2f&..." class="zoomable" alt="Fortnite Account">
+      <img src="https://cdn.discordapp.com/attachments/1358672920846667826/1375976377555091466/IMG_3556.jpg" class="zoomable" alt="Fortnite Account">
       <h2>Fortnite Full exclusive</h2>
       <p>💰 Precio: $250</p>
       <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
     </div>
-    <!-- account 11-->
     <div class="card">
-      <img src="https://cdn.discordapp.com/attachments/1369168307554615336/1375989794638925845/IMG_3573.png?ex=6833b1db&is=6832605b&hm=680f1d2f89510c5606be4bf511691eecb4ff2f07166553004fad004feb6c47f0&..." class="zoomable" alt="Valorant Account">
+      <img src="https://cdn.discordapp.com/attachments/1369168307554615336/1375989794638925845/IMG_3573.png" class="zoomable" alt="Valorant Account">
       <h2>LATAM | Inmortal 3 | Full Exo Vandal, Full CYRAX pack</h2>
       <p>💰 Precio: $220</p>
       <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
     </div>
   </div>
 
-  <!-- Zoom Modal -->
-  <div id="image-modal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modal-img">
-  </div>
-
-  <footer>
-    <p class="footer-text"><strong>Stock de mayo</strong></p>
-  </footer>
-
-  <!-- Gif saludando en la esquina inferior derecha -->
-  <img src="https://media.giphy.com/media/ASd0Ukj0y3qMM/giphy.gif" alt="Saludando" id="greeting-gif">
-
-  <!-- Particles.js library -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="script.js"></script>
-  <script>
-    // ANIMACIÓN DE PRESENTACIÓN
-    window.addEventListener('DOMContentLoaded', function() {
-      const pres = document.getElementById('presentation');
-      const title = document.querySelector('.presentation-title');
-      setTimeout(() => {
-        title.style.opacity = '1';
-      }, 150); // da tiempo a inicializar animación
-      setTimeout(() => {
-        pres.classList.add('hide');
-        // También oculta el título principal durante el overlay de presentación
-        document.getElementById('main-title').classList.remove('hide-title');
-      }, 2300); // Duración total de la animación (1.5s + buffer)
-    });
-
-    // Oculta el título principal hasta terminar la animación
-    document.getElementById('main-title').classList.add('hide-title');
-
-    // PARTICLES.JS CONFIGURACIÓN
-    particlesJS("particles-js", {
-      "particles": {
-        "number": {
-          "value": 60,
-          "density": { "enable": true, "value_area": 800 }
-        },
-        "color": { "value": "#ff00de" },
-        "shape": {
-          "type": "circle",
-          "stroke": { "width": 0, "color": "#000000" },
-          "polygon": { "nb_sides": 5 }
-        },
-        "opacity": {
-          "value": 0.25,
-          "random": true,
-          "anim": { "enable": true, "speed": 1, "opacity_min": 0.05, "sync": false }
-        },
-        "size": {
-          "value": 6,
-          "random": true,
-          "anim": { "enable": true, "speed": 4, "size_min": 0.5, "sync": false }
-        },
-        "line_linked": {
-          "enable": true,
-          "distance": 120,
-          "color": "#007bff",
-          "opacity": 0.13,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 1.3,
-          "direction": "none",
-          "random": true,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false,
-          "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 }
-        }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": { "enable": true, "mode": "repulse" },
-          "onclick": { "enable": true, "mode": "push" },
-          "resize": true
-        },
-        "modes": {
-          "grab": { "distance": 200, "line_linked": { "opacity": 0.3 } },
-          "bubble": { "distance": 180, "size": 12, "duration": 2, "opacity": 0.18, "speed": 3 },
-          "repulse": { "distance": 80, "duration": 0.2 },
-          "push": { "particles_nb": 3 },
-          "remove": { "particles_nb": 2 }
-        }
-      },
-      "retina_detect": true
-    });
-  </script>
+  <!-- ... (lo demás de tu HTML) ... -->
 </body>
 </html>
