@@ -1,1 +1,0 @@
-{"name": "famcyservices","scripts": {"dev": "bun --hot ./index.html"}}
