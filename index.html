@@ -10,19 +10,105 @@
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="particles-js"></div>
   
   <div id="presentation">
-    <span class="presentation-title">Fancy Services</span>
+    <div class="presentation-content">
+      <h1 class="welcome-text">Bienvenido a</h1>
+      <span class="presentation-title">Fancy Services</span>
+      <p class="presentation-subtitle">Alcanza tu máximo potencial</p>
+    </div>
   </div>
+
+  <style>
+    #presentation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+
+    .presentation-content {
+      text-align: center;
+      filter: blur(0);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .welcome-text {
+      color: #ffffff;
+      font-size: 2.5em;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+      text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+      letter-spacing: 2px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .presentation-title {
+      color: #ffd700;
+      font-size: 4.5em;
+      font-weight: 800;
+      display: block;
+      margin: 20px 0;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards 0.3s;
+      text-shadow: 
+        0 0 5px rgba(218, 165, 32, 0.5),
+        0 0 10px rgba(218, 165, 32, 0.3),
+        0 0 15px rgba(218, 165, 32, 0.2);
+      letter-spacing: 3px;
+      -webkit-text-stroke: 1px rgba(255, 215, 0, 0.3);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    .presentation-subtitle {
+      color: #ffffff;
+      font-size: 1.8em;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards 0.6s;
+      text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+      letter-spacing: 1px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(0);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
+  </style>
 
   <div class="nav-container">
     <nav class="navbar">
       <a href="#accounts" class="nav-link active" onclick="switchSection('accounts')">Cuentas</a>
+      <a href="#nfaacc" class="nav-link" onclick="switchSection('nfaacc')">Nfa Acc</a>
       <a href="#cheats" class="nav-link" onclick="switchSection('cheats')">Cheats</a>
       <a href="#status" class="nav-link" onclick="switchSection('status')">Status</a>
+      <a href="#leaderboard" class="nav-link" onclick="switchSection('leaderboard')">Leaderboard</a>
       <a href="#info" class="nav-link" onclick="switchSection('info')">Información</a>
       <a href="#payment" class="nav-link" onclick="switchSection('payment')">Formas de Pago</a>
       <a href="#support" class="nav-link" onclick="switchSection('support')">Soporte</a>
@@ -30,6 +116,108 @@
   </div>
 
   <div class="main-container">
+    <!-- Sección de NFA ACC -->
+    <section id="nfaacc" class="section">
+      <h1 class="neon-text">🎮 Cuentas NFA Personalizadas 🎮</h1>
+      
+      <div class="info-container">
+        <div class="info-section">
+          <div class="info-card">
+            <div class="info-header">
+              <div class="info-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <h3>¿Qué son las cuentas NFA?</h3>
+            </div>
+            <div class="info-content">
+              <p class="main-description">
+                <span class="highlight">NFA (No Full Access)</span> son cuentas que te permiten jugar normalmente pero sin la capacidad de cambiar las credenciales. Son perfectas para jugar y disfrutar de todos los beneficios del juego sin preocupaciones.
+              </p>
+              <div class="info-features">
+                <div class="feature-item">
+                  <i class="fas fa-check-circle"></i>
+                  <p>Acceso completo al juego</p>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-shield-alt"></i>
+                  <p>Garantía de funcionamiento</p>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-lock"></i>
+                  <p>Seguridad garantizada</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-header">
+              <div class="info-icon">
+                <i class="fas fa-magic"></i>
+              </div>
+              <h3>Personalización Completa</h3>
+            </div>
+            <div class="info-content">
+              <p class="main-description">
+                Creamos tu cuenta NFA exactamente como la deseas. Tú eliges todas las características:
+              </p>
+              <div class="info-features">
+                <div class="feature-item">
+                  <i class="fas fa-paint-brush"></i>
+                  <p>Skins específicas que desees</p>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-trophy"></i>
+                  <p>Rango deseado</p>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-clock"></i>
+                  <p>Tiempo de inactividad personalizado</p>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-globe"></i>
+                  <p>Región de tu preferencia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-header">
+              <div class="info-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <h3>¿Cómo Ordenar?</h3>
+            </div>
+            <div class="info-content">
+              <p class="main-description">
+                Contacta con nosotros en Discord para crear tu cuenta personalizada. Te guiaremos en todo el proceso.
+              </p>
+              <div class="info-features">
+                <div class="feature-item">
+                  <i class="fas fa-comments"></i>
+                  <p>Asesoramiento personalizado</p>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-hand-holding-usd"></i>
+                  <p>Precios accesibles</p>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-headset"></i>
+                  <p>Soporte 24/7</p>
+                </div>
+              </div>
+              <div class="contact-button" style="text-align: center; margin-top: 20px;">
+                <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">
+                  <i class="fab fa-discord"></i> Ordenar Cuenta Personalizada
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Sección de Cuentas -->
     <section id="accounts" class="section active">
       <h1 class="neon-text" id="main-title">Fancy Stock <a href="#info" class="faq-link" onclick="event.preventDefault(); switchSection('info')">FA</a></h1>
@@ -113,11 +301,15 @@
           <p class="garantia">🔒 Garantía de 2 semanas</p>
           <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
         </div>
-        <div class="card">
+        <div class="card" style="position: relative; opacity: 0.7;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 1; flex-direction: column;">
+            <h2 style="color: #ff6b6b; font-size: 24px; transform: rotate(-30deg); border: 3px solid #ff6b6b; padding: 10px 20px; background: rgba(0,0,0,0.5); margin-bottom: 15px;">VENDIDA</h2>
+            <p style="color: #ffd700; font-size: 16px; text-align: center;">Comprada por<br><span style="font-weight: bold; font-size: 20px;">susiniblet</span></p>
+          </div>
           <img src="https://i.imgur.com/ynl6YB8.png" class="zoomable" alt="Valorant Account">
           <h2>LATAM | SILVER 3</h2>
           <p>✅LATAM | 144 Skins + 10 Knife | Arcane Sheriff| 81k vp value<br>💰 Precio: $50</p>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button" style="pointer-events: none; opacity: 0.5;">Vendida</a>
         </div>
         <div class="card">
           <img src="https://i.imgur.com/PjHeS9i.png" class="zoomable" alt="Valorant Account">
@@ -126,17 +318,147 @@
           <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
         </div>
         <div class="card">
-          <img src="https://cdn.discordapp.com/attachments/1358672920846667826/1375976377555091466/IMG_3556.jpg" class="zoomable" alt="Fortnite Account">
-          <h2>Fortnite Full exclusive</h2>
-          <p>💰 Precio: $250</p>
+          <img src="https://cdn.discordapp.com/attachments/1358651617095712939/1378470550569095260/958789467.png?ex=683cb83e&is=683b66be&hm=f2d3c24ed0133647d74f3400b8807c808a2bfab580e8922250f0d9c5dffd079d&" class="zoomable" alt="Valorant Account">
+          <h2>NA | Unranked</h2>
+          <p>✅NA | 50+ Skins |  RGX, Protocol, Ion, Reaver y Prime | Varios cuchillos incluidos<br>💰 Precio: $100</p>
+          <p class="garantia">🔒 Garantía de 2 semanas</p>
           <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
         </div>
         <div class="card">
-          <img src="https://cdn.discordapp.com/attachments/1369168307554615336/1375989794638925845/IMG_3573.png" class="zoomable" alt="Valorant Account">
-          <h2>LATAM | Inmortal 3 | Full Exo Vandal, Full CYRAX pack</h2>
-          <p>💰 Precio: $220</p>
+          <img src="https://cdn.discordapp.com/attachments/1345460380859629608/1377373743147651112/Blef___EU___143___Skins__20_Knives__64_Paid___Champions_2024_Blade_Prime__2.0_Karambit_Power_Fist_Oni_Claw___143_weapons.png?ex=683caf42&is=683b5dc2&hm=3a1e70bd21d69929125d4dcb37e951d8bcb839126eca83b8f47487828e64f6de&" class="zoomable" alt="Valorant Account">
+          <h2>EU | BRONCE 1</h2>
+          <p>✅EU | 143 Skins | Nivel 164 | Valor del Inventario: 170,465 VP | Colección Completa<br>💰 Precio: $300</p>
+          <p class="garantia">🔒 Garantía de 2 semanas</p>
           <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
         </div>
+      </div>
+    </section>
+
+    <!-- Sección de Leaderboard -->
+    <section id="leaderboard" class="section">
+      <h1 class="neon-text">👑 Top Compradores Elite 👑</h1>
+      
+      <div class="leaderboard-container">
+        <div class="leaderboard-card">
+          <div class="leaderboard-header">
+            <i class="fas fa-crown" style="color: #ffd700;"></i>
+            <h2>Cliente Elite</h2>
+          </div>
+          <div class="leaderboard-list">
+            <div class="leaderboard-item" style="background: linear-gradient(90deg, rgba(255,215,0,0.1) 0%, rgba(255,215,0,0.05) 100%);">
+              <span class="rank">1</span>
+              <div class="user-info">
+                <img src="https://cdn.discordapp.com/avatars/873317241817546754/4518e0c5f63fea60185735123677bb4a.png?size=2048" alt="flaflex Avatar" class="user-avatar">
+                <span class="username">flaflex</span>
+                <span class="elite-badge">Elite</span>
+              </div>
+              <span class="purchase-count">3 compras</span>
+            </div>
+            
+            <div class="leaderboard-item" style="background: linear-gradient(90deg, rgba(192,192,192,0.1) 0%, rgba(192,192,192,0.05) 100%);">
+              <span class="rank">2</span>
+              <div class="user-info">
+                <img src="https://cdn.discordapp.com/avatars/690745205476950017/7750220c2aaa10b436b43d5706ffafb3.png?size=2048" alt="puto Avatar" class="user-avatar">
+                <span class="username">puto</span>
+                <span class="elite-badge">Elite</span>
+              </div>
+              <span class="purchase-count">3 compras</span>
+            </div>
+            
+            <div class="leaderboard-item" style="background: linear-gradient(90deg, rgba(205,127,50,0.1) 0%, rgba(205,127,50,0.05) 100%);">
+              <span class="rank">3</span>
+              <div class="user-info">
+                <img src="https://cdn.discordapp.com/avatars/442520023940988945/e6c1b4e8dafa2e364bb5f19afe4b2c67.png?size=2048" alt="rixz b Avatar" class="user-avatar">
+                <span class="username">rixz b</span>
+                <span class="elite-badge">Elite</span>
+              </div>
+              <span class="purchase-count">2 compras</span>
+            </div>
+          </div>
+        </div>
+
+        <style>
+          .leaderboard-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+          }
+
+          .leaderboard-card {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(218, 165, 32, 0.2);
+          }
+
+          .leaderboard-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 15px;
+          }
+
+          .leaderboard-header h2 {
+            color: #ffd700;
+            font-size: 2em;
+            margin: 0;
+          }
+
+          .leaderboard-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+            transition: transform 0.2s;
+          }
+
+          .leaderboard-item:hover {
+            transform: translateX(10px);
+          }
+
+          .rank {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffd700;
+            width: 40px;
+          }
+
+          .user-info {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            gap: 15px;
+          }
+
+          .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #ffd700;
+          }
+
+          .username {
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: 500;
+          }
+
+          .elite-badge {
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            color: #000;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+          }
+
+          .purchase-count {
+            color: #ffd700;
+            font-weight: 500;
+          }
+        </style>
       </div>
     </section>
 
@@ -149,26 +471,30 @@
           <div class="info-card">
             <div class="info-header">
               <div class="info-icon">
-                <i class="fas fa-question-circle"></i>
+                <i class="fas fa-key"></i>
               </div>
-              <h3>¿Qué es una cuenta NFA?</h3>
+              <h3>¿Qué son las cuentas FA?</h3>
             </div>
             <div class="info-content">
               <p class="main-description">
-                <span class="highlight">NFA (No Full Access)</span> significa que puedes usar la cuenta normalmente, pero no es posible cambiar sus credenciales. Estas cuentas son perfectas para jugar y disfrutar de todos los beneficios sin preocupaciones.
+                <span class="highlight">FA (Full Access)</span> son cuentas premium con control total sobre las credenciales y datos de la cuenta.
               </p>
               <div class="info-features">
                 <div class="feature-item">
                   <i class="fas fa-check-circle"></i>
-                  <p>Acceso completo al juego</p>
+                  <p>Control Total - Cambio de email y contraseña</p>
                 </div>
                 <div class="feature-item">
-                  <i class="fas fa-check-circle"></i>
-                  <p>Skins y contenido exclusivo</p>
+                  <i class="fas fa-shield-alt"></i>
+                  <p>Seguridad Garantizada - Primera mano</p>
                 </div>
                 <div class="feature-item">
-                  <i class="fas fa-check-circle"></i>
-                  <p>Garantía de funcionamiento</p>
+                  <i class="fas fa-user-lock"></i>
+                  <p>Email verificado y datos modificables</p>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-gem"></i>
+                  <p>Ideal para uso personal y largo plazo</p>
                 </div>
               </div>
             </div>
@@ -243,58 +569,114 @@
       
       <div class="cheats-container">
         <div class="cheat-card">
-          <h2 class="cheat-title">🎯 Valorant Premium Cheat</h2>
+          <h2 class="cheat-title">🎨 Color Bot</h2>
           <ul class="cheat-features">
-            <li>COLOR-MENU - Personalización completa de la interfaz</li>
-            <li>AIM-LOCK - Sistema de apuntado preciso</li>
-            <li>UNLOCK-ALL - Desbloqueo de contenido</li>
-            <li>VANGUARD-OFF - Bypass del sistema anti-cheat</li>
-            <li>BYPASS-CHEAT - Sistema anti-detección avanzado</li>
-            <li>Soporte 24/7 vía Discord</li>
+            <li>✅ Completamente externo</li>
+            <li>✅ Trigger Bot</li>
+            <li>✅ Aimbot</li>
+            <li>✅ Aimbot humanizado</li>
+            <li>✅ Flick bot</li>
+            <li>✅ Color personalizable (rojo, morado, amarillo)</li>
+            <li>✅ Completamente indetectable</li>
           </ul>
-          <div class="cheat-price">💰 Precio: $25/semana</div>
+          <div class="pricing-tiers" style="margin-top: 15px;">
+            <p class="price-option">💰 3 Days: 12$</p>
+            <p class="price-option">💰 Week: 25$</p>
+            <p class="price-option">💰 Month: 45$</p>
+          </div>
           <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Comprar Ahora</a>
         </div>
 
         <div class="cheat-card">
-          <h2 class="cheat-title">🎮 Fortnite VIP Cheat</h2>
+          <h2 class="cheat-title">🎯 Full Menu</h2>
           <ul class="cheat-features">
-            <li>FORTNITE-EXT - Funciones externas avanzadas</li>
-            <li>FORTNITE-PRIVATE - Modo privado exclusivo</li>
-            <li>BYPASS-POP-UP - Eliminación de advertencias</li>
-            <li>COLOR-MENU - Menú personalizable</li>
-            <li>UNLOCK-ALL - Acceso a todos los items</li>
-            <li>solo-visuales - Opciones visuales seguras</li>
+            <li>✅ Incluye todas las funciones de otros cheats</li>
+            <li>✅ Cheat Interno con máximo rendimiento</li>
+            <li>✅ Bypass Vanguard avanzado</li>
+            <li>✅ Sistema anti-detección mejorado</li>
+            <li>✅ Aimbot, Trigger, ESP, Radar</li>
+            <li>✅ Personalización completa de colores</li>
+            <li>✅ Actualizaciones automáticas</li>
+            <li>⚡ FÁCIL DE INSTALAR</li>
           </ul>
-          <div class="cheat-price">💰 Precio: $30/semana</div>
+          <div class="pricing-tiers" style="margin-top: 15px;">
+            <p class="price-option">💰 Día: 8$</p>
+            <p class="price-option">💰 Semanal: 25$</p>
+            <p class="price-option">💰 Mensual: 65$</p>
+            <p class="price-option">💰 Lifetime: 100$</p>
+          </div>
           <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Comprar Ahora</a>
         </div>
 
         <div class="cheat-card">
-          <h2 class="cheat-title">🛡️ Bypass Premium Pack</h2>
+          <h2 class="cheat-title">🛡️ Bypass-Spoofer</h2>
           <ul class="cheat-features">
-            <li>BYPASS-CHEAT - Sistema anti-detección principal</li>
-            <li>BYPASS-POP-UP - Eliminador de alertas</li>
-            <li>VANGUARD-OFF - Desactivación de protección</li>
-            <li>intocable - Modo invisible mejorado</li>
-            <li>Actualizaciones diarias automáticas</li>
-            <li>Soporte prioritario 24/7</li>
+            <h3 style="color: #9f7aea;">🎮 Supported Games</h3>
+            <li>✅ Valorant</li>
+            <li>✅ League of Legends (LoL)</li>
+            <li>✅ Fortnite</li>
+            
+            <h3 style="color: #9f7aea; margin-top: 10px;">💻 Compatibility</h3>
+            <li>✅ All Motherboards Supported</li>
+            <li>✅ Compatible with Windows 10 & 11</li>
+            <li>✅ Bypass inclused</li>
+            
+            <h3 style="color: #ff6b6b; margin-top: 10px;">⚠️ Requirements</h3>
+            <li>⚠️ REQUIERE REINICIO DE PC</li>
+            <li>⚠️ REQUIERE FLASHEO DE BIOS</li>
           </ul>
-          <div class="cheat-price">💰 Precio: $35/semana</div>
+          <div class="pricing-tiers" style="margin-top: 15px;">
+            <p class="price-option">💰 3 Days Access: 19$</p>
+            <p class="price-option">💰 30 Days Access: 40$</p>
+            <p class="price-option">💰 Lifetime Access: 80$</p>
+          </div>
           <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Comprar Ahora</a>
         </div>
 
-        <div class="cheat-card">
-          <h2 class="cheat-title">🎨 Visual Enhancement Pack</h2>
+        <div class="cheat-card" style="opacity: 0.7; position: relative;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 1;">
+            <h2 style="color: #ff6b6b; font-size: 24px; text-align: center;">🚫 NO DISPONIBLE<br>POR EL MOMENTO</h2>
+          </div>
+          <h2 class="cheat-title">👁️ Visual Menu</h2>
           <ul class="cheat-features">
-            <li>COLOR-MENU - Personalización visual completa</li>
-            <li>solo-visuales - Mejoras visuales seguras</li>
-            <li>AIM-LOCK - Asistencia de puntería suave</li>
-            <li>intocable - Modo sigiloso</li>
-            <li>Configuración personalizada</li>
-            <li>Actualizaciones semanales</li>
+            <li>ESP (Wallhack)</li>
+            <li>Radar 2D/3D</li>
+            <li>Glow personalizado</li>
+            <li>Información de jugadores</li>
+            <li>Modo seguro</li>
+            <li>Actualizaciones automáticas</li>
           </ul>
-          <div class="cheat-price">💰 Precio: $20/semana</div>
+          <div class="pricing-tiers" style="margin-top: 15px;">
+            <p class="price-option">💰 Precio: $20/semana</p>
+          </div>
+          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button" style="pointer-events: none; opacity: 0.5;">Próximamente</a>
+        </div>
+
+        <div class="cheat-card">
+          <h2 class="cheat-title">🎮 Fortnite Externo</h2>
+          <ul class="cheat-features">
+            <h3 style="color: #9f7aea;">🎯 Mejoras Visuales</h3>
+            <li>✅ Caja 3D</li>
+            <li>✅ Esqueleto Superpuesto</li>
+            <li>✅ Nombres de Jugadores</li>
+            <li>✅ Mostrar Rango (ESP)</li>
+            <li>✅ Indicador de Distancia</li>
+            <li>✅ Información de Plataforma</li>
+            
+            <h3 style="color: #9f7aea; margin-top: 10px;">🎯 Configuración de Aimbot</h3>
+            <li>✅ Activar/Desactivar Aimbot</li>
+            <li>✅ Tecla de Aimbot Personalizable</li>
+            <li>✅ Zonas Objetivo: Cabeza, Cuello, Cuerpo</li>
+            <li>✅ Campo de Visión Ajustable (FOV)</li>
+            <li>✅ Opción de Apuntado Suave</li>
+            
+            <h3 style="color: #9f7aea; margin-top: 10px;">🛠️ Extras</h3>
+            <li>✅ Compatibilidad Total con Controles (Todos los Mandos)</li>
+          </ul>
+          <div class="pricing-tiers" style="margin-top: 15px;">
+            <p class="price-option">💰 Acceso Semanal: 35$</p>
+            <p class="price-option">💰 Acceso Mensual: 85$</p>
+          </div>
           <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Comprar Ahora</a>
         </div>
       </div>
@@ -304,7 +686,7 @@
     <section id="status" class="section">
       <h1 class="neon-text">🔮 Estado del Servicio 🔮</h1>
       
-      <div class="cheat-status-container">
+      <div class="status-container">
         <div class="status-card">
           <div class="status-icon">
             <i class="fas fa-shield-alt"></i>
@@ -435,7 +817,6 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-text">
-        <p>Design By <span class="highlight">monepii</span></p>
         <div class="footer-contact">
           <a href="https://discord.gg/fancyservices" target="_blank" class="footer-link">
             <i class="fab fa-discord"></i> Discord
@@ -457,11 +838,11 @@
     <div id="modalCaption"></div>
   </div>
 
-  <!-- Notificación de compra -->
+  <!-- Notificación de ticket -->
   <div id="purchaseNotification" class="purchase-notification">
-    <i class="fas fa-shopping-cart notification-icon"></i>
+    <i class="fab fa-discord notification-icon"></i>
     <div class="notification-content">
-      <p class="notification-title">¡Nueva compra!</p>
+      <p class="notification-title">¡Nuevo Ticket!</p>
       <p class="notification-text"></p>
     </div>
   </div>
@@ -500,23 +881,14 @@
     // Presentación inicial
     window.addEventListener('load', function() {
       const presentation = document.getElementById('presentation');
-      const title = document.querySelector('.presentation-title');
-
-      // Mostrar título con efecto
-      setTimeout(() => {
-        if (title) {
-          title.style.opacity = '1';
-          title.style.filter = 'blur(0)';
-        }
-      }, 180);
-
+      
       // Ocultar presentación
       setTimeout(() => {
         if (presentation) {
           presentation.style.opacity = '0';
           presentation.style.visibility = 'hidden';
         }
-      }, 2200);
+      }, 2500);
     });
 
     // Navegación
@@ -591,42 +963,33 @@
       targetLink.classList.add('active');
     }
 
-    // Configuración de notificaciones de compra
-    const locations = [
-      "Buenos Aires, Argentina",
-      "São Paulo, Brasil",
-      "Santiago, Chile",
-      "Bogotá, Colombia",
-      "Lima, Perú",
-      "Caracas, Venezuela",
-      "Ciudad de México, México",
-      "Montevideo, Uruguay",
-      "Asunción, Paraguay",
-      "La Paz, Bolivia",
-      "Quito, Ecuador",
-      "San José, Costa Rica",
-      "Ciudad de Panamá, Panamá",
-      "Santo Domingo, República Dominicana",
-      "Guatemala City, Guatemala"
+    const ticketTypes = [
+      "consulta sobre cuentas FA",
+      "consulta sobre bypass",
+      "consulta sobre cheats",
+      "consulta sobre formas de pago",
+      "consulta sobre garantía",
+      "solicitud de soporte",
+      "pregunta sobre precios",
+      "consulta sobre disponibilidad"
     ];
 
-    const products = [
-      "cuenta Valorant Ascendant",
-      "cuenta Fortnite Full Exclusive",
-      "cuenta Valorant con 90 skins",
-      "cuenta LATAM Silver",
-      "cheat premium Valorant",
-      "cheat VIP Fortnite",
-      "cuenta NA con RGX Pro"
+    const userTypes = [
+      "Usuario Nuevo",
+      "Cliente Frecuente",
+      "Usuario Verificado",
+      "Cliente VIP",
+      "Miembro Nuevo",
+      "Usuario Interesado"
     ];
 
     function showPurchaseNotification() {
-      const location = locations[Math.floor(Math.random() * locations.length)];
-      const product = products[Math.floor(Math.random() * products.length)];
+      const ticketType = ticketTypes[Math.floor(Math.random() * ticketTypes.length)];
+      const userType = userTypes[Math.floor(Math.random() * userTypes.length)];
       const notification = document.getElementById('purchaseNotification');
       const notificationText = notification.querySelector('.notification-text');
       
-      notificationText.textContent = `Alguien de ${location} compró una ${product}`;
+      notificationText.textContent = `${userType} abrió un ticket para ${ticketType}`;
       
       notification.classList.add('show');
       
