@@ -1,1007 +1,817 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#000000">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>Fancy Services</title>
-  <link rel="icon" href="logo.png" type="image/png">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="particles-js"></div>
-  
-  <div id="presentation">
-    <div class="presentation-content">
-      <h1 class="welcome-text">Bienvenido a</h1>
-      <span class="presentation-title">Fancy Services</span>
-      <p class="presentation-subtitle">Alcanza tu máximo potencial</p>
+    <div class="lang-selector">
+        <button id="lang-es">ES</button>
+        <button id="lang-en">EN</button>
     </div>
-  </div>
 
-  <style>
-    #presentation {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s, visibility 0.5s;
-    }
-
-    .presentation-content {
-      text-align: center;
-      filter: blur(0);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    .welcome-text {
-      color: #ffffff;
-      font-size: 2.5em;
-      font-weight: 600;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease forwards;
-      text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
-      letter-spacing: 2px;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .presentation-title {
-      color: #ffd700;
-      font-size: 4.5em;
-      font-weight: 800;
-      display: block;
-      margin: 20px 0;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease forwards 0.3s;
-      text-shadow: 
-        0 0 5px rgba(218, 165, 32, 0.5),
-        0 0 10px rgba(218, 165, 32, 0.3),
-        0 0 15px rgba(218, 165, 32, 0.2);
-      letter-spacing: 3px;
-      -webkit-text-stroke: 1px rgba(255, 215, 0, 0.3);
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-    }
-
-    .presentation-subtitle {
-      color: #ffffff;
-      font-size: 1.8em;
-      font-weight: 500;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease forwards 0.6s;
-      text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
-      letter-spacing: 1px;
-      font-family: 'Playfair Display', serif;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-        filter: blur(0);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-      }
-    }
-  </style>
-
-  <div class="nav-container">
-    <nav class="navbar">
-      <a href="#accounts" class="nav-link active" onclick="switchSection('accounts')">Cuentas</a>
-      <a href="#nfaacc" class="nav-link" onclick="switchSection('nfaacc')">Nfa Acc</a>
-      <a href="#cheats" class="nav-link" onclick="switchSection('cheats')">Cheats</a>
-      <a href="#status" class="nav-link" onclick="switchSection('status')">Status</a>
-      <a href="#leaderboard" class="nav-link" onclick="switchSection('leaderboard')">Leaderboard</a>
-      <a href="#info" class="nav-link" onclick="switchSection('info')">Información</a>
-      <a href="#payment" class="nav-link" onclick="switchSection('payment')">Formas de Pago</a>
-      <a href="#support" class="nav-link" onclick="switchSection('support')">Soporte</a>
-    </nav>
-  </div>
-
-  <div class="main-container">
-    <!-- Sección de NFA ACC -->
-    <section id="nfaacc" class="section">
-      <h1 class="neon-text">🎮 Cuentas NFA Personalizadas 🎮</h1>
-      
-      <div class="info-container">
-        <div class="info-section">
-          <div class="info-card">
-            <div class="info-header">
-              <div class="info-icon">
-                <i class="fas fa-star"></i>
-              </div>
-              <h3>¿Qué son las cuentas NFA?</h3>
-            </div>
-            <div class="info-content">
-              <p class="main-description">
-                <span class="highlight">NFA (No Full Access)</span> son cuentas que te permiten jugar normalmente pero sin la capacidad de cambiar las credenciales. Son perfectas para jugar y disfrutar de todos los beneficios del juego sin preocupaciones.
-              </p>
-              <div class="info-features">
-                <div class="feature-item">
-                  <i class="fas fa-check-circle"></i>
-                  <p>Acceso completo al juego</p>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-shield-alt"></i>
-                  <p>Garantía de funcionamiento</p>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-lock"></i>
-                  <p>Seguridad garantizada</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-card">
-            <div class="info-header">
-              <div class="info-icon">
-                <i class="fas fa-magic"></i>
-              </div>
-              <h3>Personalización Completa</h3>
-            </div>
-            <div class="info-content">
-              <p class="main-description">
-                Creamos tu cuenta NFA exactamente como la deseas. Tú eliges todas las características:
-              </p>
-              <div class="info-features">
-                <div class="feature-item">
-                  <i class="fas fa-paint-brush"></i>
-                  <p>Skins específicas que desees</p>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-trophy"></i>
-                  <p>Rango deseado</p>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-clock"></i>
-                  <p>Tiempo de inactividad personalizado</p>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-globe"></i>
-                  <p>Región de tu preferencia</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-card">
-            <div class="info-header">
-              <div class="info-icon">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-              <h3>¿Cómo Ordenar?</h3>
-            </div>
-            <div class="info-content">
-              <p class="main-description">
-                Contacta con nosotros en Discord para crear tu cuenta personalizada. Te guiaremos en todo el proceso.
-              </p>
-              <div class="info-features">
-                <div class="feature-item">
-                  <i class="fas fa-comments"></i>
-                  <p>Asesoramiento personalizado</p>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-hand-holding-usd"></i>
-                  <p>Precios accesibles</p>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-headset"></i>
-                  <p>Soporte 24/7</p>
-                </div>
-              </div>
-              <div class="contact-button" style="text-align: center; margin-top: 20px;">
-                <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">
-                  <i class="fab fa-discord"></i> Ordenar Cuenta Personalizada
-                </a>
-              </div>
-            </div>
-          </div>
+    <!-- Background & Intro -->
+    <div id="particles-js"></div>
+    <div id="intro-screen">
+        <div class="welcome-container">
+            <h1 class="welcome-title" data-key="welcome">Bienvenido a</h1>
+            <h2 class="welcome-subtitle" data-key="title">Fancy Services</h2>
         </div>
-      </div>
-    </section>
-
-    <!-- Sección de Cuentas -->
-    <section id="accounts" class="section active">
-      <h1 class="neon-text" id="main-title">Fancy Stock <a href="#info" class="faq-link" onclick="event.preventDefault(); switchSection('info')">FA</a></h1>
-
-      <div class="info-nfa-container">
-        <div class="info-nfa-card">
-          <div class="info-icon">
-            <i class="fas fa-info-circle"></i>
-          </div>
-          <h3>¿Qué es una cuenta NFA?</h3>
-          <div class="info-content">
-            <p><span class="highlight">NFA (No Full Access)</span> significa que puedes usar la cuenta normalmente, pero no es posible cambiar sus credenciales.</p>
-            
-            <div class="info-feature">
-              <i class="fas fa-crosshairs"></i>
-              <div class="feature-text">
-                <h4>Ready to Ranked (RR)</h4>
-                <p>Nuestras cuentas RR NFA están listas para que empieces a rankear inmediatamente en Valorant.</p>
-              </div>
-            </div>
-
-            <div class="info-feature">
-              <i class="fas fa-rocket"></i>
-              <div class="feature-text">
-                <h4>Perfectas para Boosting</h4>
-                <p>Ideales para boosting y smurfing, optimizadas para competir desde el primer momento.</p>
-              </div>
-            </div>
-
-            <div class="info-feature">
-              <i class="fas fa-shield-alt"></i>
-              <div class="feature-text">
-                <h4>Experiencia Garantizada</h4>
-                <p>Disfruta de una experiencia óptima desde el primer inicio de sesión.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery">
-        <div class="card">
-          <img src="https://i.imgur.com/e4LerPe.png" class="zoomable" alt="Valorant Account">
-          <h2>NA | ASCENDANT</h2>
-          <p>✅ Na | 6 skins | Firefront "RGX 11Z Pro" | Vandal "Kuron" | Vandal "Primary" | Phantom "Champions 2024"<br>💰 Precio: $80</p>
-          <p class="garantia">🔒 Garantía de 2 semanas</p>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-        </div>
-        <div class="card">
-          <img src="https://i.imgur.com/aJwCcG9.png" class="zoomable" alt="Valorant Account">
-          <h2>LATAM | Plata 3</h2>
-          <p>✅LA | 90 | Skins + 7 Cuchillos + 12 Paid | VCT 2025 Karambit, Forsaken Ritual Blade<br>💰 Precio: $100</p>
-          <p class="garantia">🔒 Garantía de 2 semanas</p>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-        </div>
-        <div class="card">
-          <img src="https://i.imgur.com/TQHajWR.png" class="zoomable" alt="Valorant Account">
-          <h2>NA | Lista para Rank</h2>
-          <p>✅NA | 13 | Skins + 1 Cuchillo + 5 Paid | Luxe Knife<br>💰 Precio: $100</p>
-          <p class="garantia">🔒 Garantía de 2 semanas</p>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-        </div>
-        <div class="card">
-          <img src="https://i.imgur.com/7iVY3WE.png" class="zoomable" alt="Valorant Account">
-          <h2>NA | Ascendente (BANEADA HASTA EL 15 DE AGOSTO DE 2025)</h2>
-          <p>✅NA | 100 SKIins | 5 Cuchillos | Karambit "Speed" | Operator "Harbinger of Chaos"<br>💰 Precio: $120</p>
-          <p class="garantia">🔒 Garantía de 2 semanas</p>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-        </div>
-        <div class="card">
-          <img src="https://i.imgur.com/QhjU7fh.png" class="zoomable" alt="Valorant Account">
-          <h2>AP | Oro 2</h2>
-          <p>✅AP | 18 Skins | 3 Cuchillos | VCT LOCK//IN Misericórdia<br>💰 Precio: $80</p>
-          <p class="garantia">🔒 Garantía de 2 semanas</p>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-        </div>
-        <div class="card">
-          <img src="https://i.imgur.com/9nmXW0U.png" class="zoomable" alt="Valorant Account">
-          <h2>NA | Lista Para Rank</h2>
-          <p>✅NA | Todo el paquete kuronami<br>💰 Precio: $100</p>
-          <p class="garantia">🔒 Garantía de 2 semanas</p>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-        </div>
-        <div class="card" style="position: relative; opacity: 0.7;">
-          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 1; flex-direction: column;">
-            <h2 style="color: #ff6b6b; font-size: 24px; transform: rotate(-30deg); border: 3px solid #ff6b6b; padding: 10px 20px; background: rgba(0,0,0,0.5); margin-bottom: 15px;">VENDIDA</h2>
-            <p style="color: #ffd700; font-size: 16px; text-align: center;">Comprada por<br><span style="font-weight: bold; font-size: 20px;">susiniblet</span></p>
-          </div>
-          <img src="https://i.imgur.com/ynl6YB8.png" class="zoomable" alt="Valorant Account">
-          <h2>LATAM | SILVER 3</h2>
-          <p>✅LATAM | 144 Skins + 10 Knife | Arcane Sheriff| 81k vp value<br>💰 Precio: $50</p>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button" style="pointer-events: none; opacity: 0.5;">Vendida</a>
-        </div>
-        <div class="card">
-          <img src="https://i.imgur.com/PjHeS9i.png" class="zoomable" alt="Valorant Account">
-          <h2>BRAZIL | READY FOR RANK</h2>
-          <p>✅BR | 144 | Skins + 9 Knives + 28 Paid | Glitchpop Axe, Origin Crescent Blade, Recon Balisong, Ion Karambit| 64k vp value<br>💰 Precio: $100</p>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-        </div>
-        <div class="card">
-          <img src="https://cdn.discordapp.com/attachments/1358651617095712939/1378470550569095260/958789467.png?ex=683cb83e&is=683b66be&hm=f2d3c24ed0133647d74f3400b8807c808a2bfab580e8922250f0d9c5dffd079d&" class="zoomable" alt="Valorant Account">
-          <h2>NA | Unranked</h2>
-          <p>✅NA | 50+ Skins |  RGX, Protocol, Ion, Reaver y Prime | Varios cuchillos incluidos<br>💰 Precio: $100</p>
-          <p class="garantia">🔒 Garantía de 2 semanas</p>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-        </div>
-        <div class="card">
-          <img src="https://cdn.discordapp.com/attachments/1345460380859629608/1377373743147651112/Blef___EU___143___Skins__20_Knives__64_Paid___Champions_2024_Blade_Prime__2.0_Karambit_Power_Fist_Oni_Claw___143_weapons.png?ex=683caf42&is=683b5dc2&hm=3a1e70bd21d69929125d4dcb37e951d8bcb839126eca83b8f47487828e64f6de&" class="zoomable" alt="Valorant Account">
-          <h2>EU | BRONCE 1</h2>
-          <p>✅EU | 143 Skins | Nivel 164 | Valor del Inventario: 170,465 VP | Colección Completa<br>💰 Precio: $300</p>
-          <p class="garantia">🔒 Garantía de 2 semanas</p>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Discord!</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección de Leaderboard -->
-    <section id="leaderboard" class="section">
-      <h1 class="neon-text">👑 Top Compradores Elite 👑</h1>
-      
-      <div class="leaderboard-container">
-        <div class="leaderboard-card">
-          <div class="leaderboard-header">
-            <i class="fas fa-crown" style="color: #ffd700;"></i>
-            <h2>Cliente Elite</h2>
-          </div>
-          <div class="leaderboard-list">
-            <div class="leaderboard-item" style="background: linear-gradient(90deg, rgba(255,215,0,0.1) 0%, rgba(255,215,0,0.05) 100%);">
-              <span class="rank">1</span>
-              <div class="user-info">
-                <img src="https://cdn.discordapp.com/avatars/873317241817546754/4518e0c5f63fea60185735123677bb4a.png?size=2048" alt="flaflex Avatar" class="user-avatar">
-                <span class="username">flaflex</span>
-                <span class="elite-badge">Elite</span>
-              </div>
-              <span class="purchase-count">3 compras</span>
-            </div>
-            
-            <div class="leaderboard-item" style="background: linear-gradient(90deg, rgba(192,192,192,0.1) 0%, rgba(192,192,192,0.05) 100%);">
-              <span class="rank">2</span>
-              <div class="user-info">
-                <img src="https://cdn.discordapp.com/avatars/690745205476950017/7750220c2aaa10b436b43d5706ffafb3.png?size=2048" alt="puto Avatar" class="user-avatar">
-                <span class="username">puto</span>
-                <span class="elite-badge">Elite</span>
-              </div>
-              <span class="purchase-count">3 compras</span>
-            </div>
-            
-            <div class="leaderboard-item" style="background: linear-gradient(90deg, rgba(205,127,50,0.1) 0%, rgba(205,127,50,0.05) 100%);">
-              <span class="rank">3</span>
-              <div class="user-info">
-                <img src="https://cdn.discordapp.com/avatars/442520023940988945/e6c1b4e8dafa2e364bb5f19afe4b2c67.png?size=2048" alt="rixz b Avatar" class="user-avatar">
-                <span class="username">rixz b</span>
-                <span class="elite-badge">Elite</span>
-              </div>
-              <span class="purchase-count">2 compras</span>
-            </div>
-          </div>
-        </div>
-
-        <style>
-          .leaderboard-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-          }
-
-          .leaderboard-card {
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 0 20px rgba(218, 165, 32, 0.2);
-          }
-
-          .leaderboard-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 30px;
-            gap: 15px;
-          }
-
-          .leaderboard-header h2 {
-            color: #ffd700;
-            font-size: 2em;
-            margin: 0;
-          }
-
-          .leaderboard-item {
-            display: flex;
-            align-items: center;
-            padding: 15px 20px;
-            margin: 10px 0;
-            border-radius: 10px;
-            transition: transform 0.2s;
-          }
-
-          .leaderboard-item:hover {
-            transform: translateX(10px);
-          }
-
-          .rank {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #ffd700;
-            width: 40px;
-          }
-
-          .user-info {
-            display: flex;
-            align-items: center;
-            flex: 1;
-            gap: 15px;
-          }
-
-          .user-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid #ffd700;
-          }
-
-          .username {
-            color: #fff;
-            font-size: 1.2em;
-            font-weight: 500;
-          }
-
-          .elite-badge {
-            background: linear-gradient(45deg, #ffd700, #ff8c00);
-            color: #000;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.8em;
-            font-weight: bold;
-          }
-
-          .purchase-count {
-            color: #ffd700;
-            font-weight: 500;
-          }
-        </style>
-      </div>
-    </section>
-
-    <!-- Sección de Información -->
-    <section id="info" class="section">
-      <h1 class="neon-text">ℹ️ Información Importante ℹ️</h1>
-
-      <div class="info-container">
-        <div class="info-section">
-          <div class="info-card">
-            <div class="info-header">
-              <div class="info-icon">
-                <i class="fas fa-key"></i>
-              </div>
-              <h3>¿Qué son las cuentas FA?</h3>
-            </div>
-            <div class="info-content">
-              <p class="main-description">
-                <span class="highlight">FA (Full Access)</span> son cuentas premium con control total sobre las credenciales y datos de la cuenta.
-              </p>
-              <div class="info-features">
-                <div class="feature-item">
-                  <i class="fas fa-check-circle"></i>
-                  <p>Control Total - Cambio de email y contraseña</p>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-shield-alt"></i>
-                  <p>Seguridad Garantizada - Primera mano</p>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-user-lock"></i>
-                  <p>Email verificado y datos modificables</p>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-gem"></i>
-                  <p>Ideal para uso personal y largo plazo</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-card">
-            <div class="info-header">
-              <div class="info-icon">
-                <i class="fas fa-gamepad"></i>
-              </div>
-              <h3>Ready to Ranked (RR)</h3>
-            </div>
-            <div class="info-content">
-              <p class="main-description">
-                Nuestras cuentas RR están listas para que empieces a competir inmediatamente. Perfectas para boosting y experiencias competitivas.
-              </p>
-              <div class="info-features">
-                <div class="feature-item">
-                  <i class="fas fa-crosshairs"></i>
-                  <p>Listas para rankear desde el primer momento</p>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-rocket"></i>
-                  <p>Ideales para boosting y smurfing</p>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-star"></i>
-                  <p>MMR optimizado para competitivo</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-card">
-            <div class="info-header">
-              <div class="info-icon">
-                <i class="fas fa-shield-alt"></i>
-              </div>
-              <h3>Garantía y Seguridad</h3>
-            </div>
-            <div class="info-content">
-              <p class="main-description">
-                Todas nuestras cuentas vienen con garantía y soporte 24/7 para asegurar tu mejor experiencia.
-              </p>
-              <div class="info-features">
-                <div class="feature-item">
-                  <i class="fas fa-lock"></i>
-                  <p>Cuentas verificadas y seguras</p>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-headset"></i>
-                  <p>Soporte técnico 24/7 en Discord</p>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-sync"></i>
-                  <p>Garantía de reemplazo incluida</p>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-heart"></i>
-                  <p>Satisfacción garantizada</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección de Cheats -->
-    <section id="cheats" class="section">
-      <h1 class="neon-text">💫 Fancy Cheats 💫</h1>
-      
-      <div class="cheats-container">
-        <div class="cheat-card">
-          <h2 class="cheat-title">🎨 Color Bot</h2>
-          <ul class="cheat-features">
-            <li>✅ Completamente externo</li>
-            <li>✅ Trigger Bot</li>
-            <li>✅ Aimbot</li>
-            <li>✅ Aimbot humanizado</li>
-            <li>✅ Flick bot</li>
-            <li>✅ Color personalizable (rojo, morado, amarillo)</li>
-            <li>✅ Completamente indetectable</li>
-          </ul>
-          <div class="pricing-tiers" style="margin-top: 15px;">
-            <p class="price-option">💰 3 Days: 12$</p>
-            <p class="price-option">💰 Week: 25$</p>
-            <p class="price-option">💰 Month: 45$</p>
-          </div>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Comprar Ahora</a>
-        </div>
-
-        <div class="cheat-card">
-          <h2 class="cheat-title">🎯 Full Menu</h2>
-          <ul class="cheat-features">
-            <li>✅ Incluye todas las funciones de otros cheats</li>
-            <li>✅ Cheat Interno con máximo rendimiento</li>
-            <li>✅ Bypass Vanguard avanzado</li>
-            <li>✅ Sistema anti-detección mejorado</li>
-            <li>✅ Aimbot, Trigger, ESP, Radar</li>
-            <li>✅ Personalización completa de colores</li>
-            <li>✅ Actualizaciones automáticas</li>
-            <li>⚡ FÁCIL DE INSTALAR</li>
-          </ul>
-          <div class="pricing-tiers" style="margin-top: 15px;">
-            <p class="price-option">💰 Día: 8$</p>
-            <p class="price-option">💰 Semanal: 25$</p>
-            <p class="price-option">💰 Mensual: 65$</p>
-            <p class="price-option">💰 Lifetime: 100$</p>
-          </div>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Comprar Ahora</a>
-        </div>
-
-        <div class="cheat-card">
-          <h2 class="cheat-title">🛡️ Bypass-Spoofer</h2>
-          <ul class="cheat-features">
-            <h3 style="color: #9f7aea;">🎮 Supported Games</h3>
-            <li>✅ Valorant</li>
-            <li>✅ League of Legends (LoL)</li>
-            <li>✅ Fortnite</li>
-            
-            <h3 style="color: #9f7aea; margin-top: 10px;">💻 Compatibility</h3>
-            <li>✅ All Motherboards Supported</li>
-            <li>✅ Compatible with Windows 10 & 11</li>
-            <li>✅ Bypass inclused</li>
-            
-            <h3 style="color: #ff6b6b; margin-top: 10px;">⚠️ Requirements</h3>
-            <li>⚠️ REQUIERE REINICIO DE PC</li>
-            <li>⚠️ REQUIERE FLASHEO DE BIOS</li>
-          </ul>
-          <div class="pricing-tiers" style="margin-top: 15px;">
-            <p class="price-option">💰 3 Days Access: 19$</p>
-            <p class="price-option">💰 30 Days Access: 40$</p>
-            <p class="price-option">💰 Lifetime Access: 80$</p>
-          </div>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Comprar Ahora</a>
-        </div>
-
-        <div class="cheat-card" style="opacity: 0.7; position: relative;">
-          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 1;">
-            <h2 style="color: #ff6b6b; font-size: 24px; text-align: center;">🚫 NO DISPONIBLE<br>POR EL MOMENTO</h2>
-          </div>
-          <h2 class="cheat-title">👁️ Visual Menu</h2>
-          <ul class="cheat-features">
-            <li>ESP (Wallhack)</li>
-            <li>Radar 2D/3D</li>
-            <li>Glow personalizado</li>
-            <li>Información de jugadores</li>
-            <li>Modo seguro</li>
-            <li>Actualizaciones automáticas</li>
-          </ul>
-          <div class="pricing-tiers" style="margin-top: 15px;">
-            <p class="price-option">💰 Precio: $20/semana</p>
-          </div>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button" style="pointer-events: none; opacity: 0.5;">Próximamente</a>
-        </div>
-
-        <div class="cheat-card">
-          <h2 class="cheat-title">🎮 Fortnite Externo</h2>
-          <ul class="cheat-features">
-            <h3 style="color: #9f7aea;">🎯 Mejoras Visuales</h3>
-            <li>✅ Caja 3D</li>
-            <li>✅ Esqueleto Superpuesto</li>
-            <li>✅ Nombres de Jugadores</li>
-            <li>✅ Mostrar Rango (ESP)</li>
-            <li>✅ Indicador de Distancia</li>
-            <li>✅ Información de Plataforma</li>
-            
-            <h3 style="color: #9f7aea; margin-top: 10px;">🎯 Configuración de Aimbot</h3>
-            <li>✅ Activar/Desactivar Aimbot</li>
-            <li>✅ Tecla de Aimbot Personalizable</li>
-            <li>✅ Zonas Objetivo: Cabeza, Cuello, Cuerpo</li>
-            <li>✅ Campo de Visión Ajustable (FOV)</li>
-            <li>✅ Opción de Apuntado Suave</li>
-            
-            <h3 style="color: #9f7aea; margin-top: 10px;">🛠️ Extras</h3>
-            <li>✅ Compatibilidad Total con Controles (Todos los Mandos)</li>
-          </ul>
-          <div class="pricing-tiers" style="margin-top: 15px;">
-            <p class="price-option">💰 Acceso Semanal: 35$</p>
-            <p class="price-option">💰 Acceso Mensual: 85$</p>
-          </div>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Comprar Ahora</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección de Status -->
-    <section id="status" class="section">
-      <h1 class="neon-text">🔮 Estado del Servicio 🔮</h1>
-      
-      <div class="status-container">
-        <div class="status-card">
-          <div class="status-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3>Valorant Cheat</h3>
-          <div class="status-indicator active">
-            <span class="status-dot"></span>
-            <span class="status-text">Online</span>
-          </div>
-          <div class="status-details">
-            <div class="detail-item">
-              <i class="fas fa-clock"></i>
-              <span>Última actualización</span>
-              <p>26/03/2024</p>
-            </div>
-            <div class="detail-item">
-              <i class="fas fa-users"></i>
-              <span>Usuarios activos</span>
-              <p>147</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="status-card">
-          <div class="status-icon">
-            <i class="fas fa-gamepad"></i>
-          </div>
-          <h3>Fortnite Cheat</h3>
-          <div class="status-indicator active">
-            <span class="status-dot"></span>
-            <span class="status-text">Online</span>
-          </div>
-          <div class="status-details">
-            <div class="detail-item">
-              <i class="fas fa-clock"></i>
-              <span>Última actualización</span>
-              <p>26/03/2024</p>
-            </div>
-            <div class="detail-item">
-              <i class="fas fa-users"></i>
-              <span>Usuarios activos</span>
-              <p>93</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección de Formas de Pago -->
-    <section id="payment" class="section">
-      <h1 class="neon-text">💳 Métodos de Pago 💳</h1>
-      
-      <div class="payment-container">
-        <div class="payment-card">
-          <div class="payment-icon">
-            <i class="fab fa-bitcoin"></i>
-          </div>
-          <h3>Crypto</h3>
-          <div class="payment-details">
-            <p>Aceptamos las siguientes criptomonedas:</p>
-            <ul>
-              <li><i class="fab fa-bitcoin"></i> Bitcoin (BTC)</li>
-              <li><i class="fab fa-ethereum"></i> Ethereum (ETH)</li>
-              <li><i class="fas fa-coins"></i> USDT</li>
-            </ul>
-            <p class="payment-note">Proceso rápido y seguro</p>
-          </div>
-        </div>
-
-        <div class="payment-card">
-          <div class="payment-icon">
-            <i class="fas fa-money-bill-wave"></i>
-          </div>
-          <h3>Transferencias</h3>
-          <div class="payment-details">
-            <p>Aceptamos transferencias en:</p>
-            <ul>
-              <li><i class="fas fa-university"></i> Transferencia Bancaria</li>
-              <li><i class="fas fa-money-bill-wave"></i> Wise</li>
-              <li><i class="fas fa-exchange-alt"></i> PayPal</li>
-            </ul>
-            <p class="payment-note">Proceso seguro con comprobante</p>
-          </div>
-        </div>
-
-        <div class="payment-card">
-          <div class="payment-icon">
-            <i class="fas fa-gift"></i>
-          </div>
-          <h3>Gift Cards</h3>
-          <div class="payment-details">
-            <p>Aceptamos tarjetas de regalo:</p>
-            <ul>
-              <li><i class="fab fa-steam"></i> Steam</li>
-              <li><i class="fab fa-amazon"></i> Amazon</li>
-              <li><i class="fas fa-gamepad"></i> PlayStation</li>
-              <li><i class="fab fa-xbox"></i> Xbox</li>
-            </ul>
-            <p class="payment-note">Valor según tasa del día</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="payment-info">
-        <p class="info-text">Para realizar tu pago, contacta con nosotros en Discord y especifica tu método preferido</p>
-        <a href="https://discord.gg/fancyservices" target="_blank" class="payment-button">
-          <i class="fab fa-discord"></i> Contactar para pagar
-        </a>
-      </div>
-    </section>
-
-    <!-- Sección de Soporte -->
-    <section id="support" class="section">
-      <h1 class="neon-text">🛟 Soporte 24/7 🛟</h1>
-      <div class="cheats-container">
-        <div class="cheat-card">
-          <h2 class="cheat-title">Contacto Discord</h2>
-          <p style="color: #fff; font-size: 1.2rem; margin: 1rem 0;">
-            Nuestro equipo de soporte está disponible 24/7 para ayudarte con cualquier duda o problema.
-          </p>
-          <a href="https://discord.gg/fancyservices" target="_blank" class="buy-button">Unirse al Discord</a>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-text">
-        <div class="footer-contact">
-          <a href="https://discord.gg/fancyservices" target="_blank" class="footer-link">
-            <i class="fab fa-discord"></i> Discord
-          </a>
-        </div>
-      </div>
-      <div class="footer-wave">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path fill="rgba(218, 165, 32, 0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-        </svg>
-      </div>
     </div>
-  </footer>
 
-  <!-- Modal para imágenes -->
-  <div id="imageModal" class="modal">
-    <span class="modal-close">&times;</span>
-    <img class="modal-content" id="modalImage">
-    <div id="modalCaption"></div>
-  </div>
+    <!-- Main Content -->
+    <main id="main-content">
+        <h1 class="main-title" data-key="main_title">Fancy Services</h1>
+        <div class="thumbnail-grid">
+            <div class="thumbnail" data-modal-target="#valorant-modal">
+                <h3 data-key="category_valorant">VALORANT</h3>
+            </div>
+            <div class="thumbnail" data-modal-target="#bo6-modal">
+                <h3 data-key="category_bo6">Bo6</h3>
+            </div>
+            <div class="thumbnail" data-modal-target="#fortnite-modal">
+                <h3 data-key="category_fortnite">FORTNITE</h3>
+            </div>
+            <div class="thumbnail" data-modal-target="#woofers-modal">
+                <h3 data-key="category_woofers">WOOFERS</h3>
+            </div>
+            <div class="thumbnail" data-modal-target="#accounts-modal">
+                <h3 data-key="category_accounts">ACCOUNTS</h3>
+            </div>
+        </div>
+    </main>
 
-  <!-- Notificación de ticket -->
-  <div id="purchaseNotification" class="purchase-notification">
-    <i class="fab fa-discord notification-icon"></i>
-    <div class="notification-content">
-      <p class="notification-title">¡Nuevo Ticket!</p>
-      <p class="notification-text"></p>
+    <!-- Valorant Products Modal -->
+    <div id="valorant-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-key="valorant_modal_title">VALORANT PRODUCTS</h3>
+                <span class="close-button">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="product-showcase-left">
+                    <img src="https://cdn.discordapp.com/attachments/1347343400533360651/1386078571092512859/jett-Photoroom.png?ex=685865c3&is=68571443&hm=01e94bacd1f1203091345062393da6d6a187cb37218a9f6bd2b24668b8e4eb69&" alt="Jett">
+                    <div class="showcase-footer">
+                        <div class="product-count">4 Products</div>
+                        <button class="purchase-button-main" data-key="purchase" data-modal-target="#purchase-options-modal">PURCHASE</button>
+                    </div>
+                </div>
+                <div class="product-grid-right">
+                    <div class="product-card"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fc2eb6120043011.60aa2bbf82508.jpg" alt="SLOTTED">
+                        <h4 data-key="slotted_product">SLOTTED</h4>
+                        <div class="product-meta"><div class="price"><span>Starting</span><strong>$69.99</strong></div></div>
+                        <div class="card-buttons">
+                            <button class="features-button" data-key="features" data-modal-target="#slotted-features-modal">FEATURES</button>
+                        </div>
+                    </div>
+                    <div class="product-card"><img src="https://cdn-longterm.mee6.xyz/plugins/embeds/images/1310730623358472304/247a24c7f09593d40d9d360233fd6a6547df2430d4f9ccb2e48445c3a51b4f48.png" alt="RAGE">
+                        <h4 data-key="rage_product">RAGE</h4>
+                        <div class="product-meta"><div class="price"><span>Starting</span><strong>$15.00</strong></div></div>
+                        <div class="card-buttons">
+                            <button class="features-button" data-key="features" data-modal-target="#rage-features-modal">FEATURES</button>
+                        </div>
+                    </div>
+                    <div class="product-card"><img src="https://cdn-longterm.mee6.xyz/plugins/embeds/images/1310730623358472304/922202ce1eaabb1723ac14a85fd5f487e4fd727ddf784451431e3f1e68ce83eb.png" alt="EXTERNAL">
+                        <h4 data-key="external_product">EXTERNAL</h4>
+                        <div class="product-meta"><div class="price"><span>Starting</span><strong>$10.00</strong></div></div>
+                        <div class="card-buttons">
+                            <button class="features-button" data-key="features" data-modal-target="#external-features-modal">FEATURES</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                         <div class="card-image-container">
+                            <img src="https://cdn-longterm.mee6.xyz/plugins/embeds/images/1310730623358472304/ec1e90ffe574fb761386a79223805344bbd3792ba937d7d87049a6cbc76e8586.gif" alt="UNLOCK">
+                            <div class="maintenance-notice" data-key="unlock_notice">En actualización!</div>
+                        </div>
+                        <h4 data-key="unlock_product">UNLOCK</h4>
+                        <div class="product-meta"><div class="price"><span>Starting</span><strong>$4.99</strong></div></div>
+                        <div class="card-buttons">
+                            <button class="features-button" data-key="features">FEATURES</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    // Particles.js config
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 60, "density": { "enable": true, "value_area": 800 }},
-        "color": { "value": "#ffd700" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.28, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.05, "sync": false }},
-        "size": { "value": 6, "random": true, "anim": { "enable": true, "speed": 4, "size_min": 0.5, "sync": false }},
-        "line_linked": { "enable": true, "distance": 120, "color": "#daa520", "opacity": 0.13, "width": 1 },
-        "move": { "enable": true, "speed": 1.3, "random": true, "out_mode": "out" }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": { "enable": true, "mode": "repulse" },
-          "onclick": { "enable": true, "mode": "push" },
-          "resize": true
-        },
-        "modes": {
-          "grab": { "distance": 200, "line_linked": { "opacity": 0.3 } },
-          "bubble": { "distance": 180, "size": 12, "duration": 2, "opacity": 0.18, "speed": 3 },
-          "repulse": { "distance": 80, "duration": 0.2 },
-          "push": { "particles_nb": 3 },
-          "remove": { "particles_nb": 2 }
-        }
-      },
-      "retina_detect": true
-    });
+    <!-- RAGE Features Modal -->
+    <div id="rage-features-modal" class="modal">
+        <div class="modal-content features-modal-content">
+            <span class="close-button">&times;</span>
+            <h2 data-key="rage_title">RAGE FEATURES</h2>
+            <div class="features-section">
+                <h3 data-key="rage_req_title">Requirements</h3>
+                <div class="feature-category">
+                    <ul>
+                        <li data-key="rage_req_1">• Windows 10 & 11 Supported - All Versions</li>
+                        <li data-key="rage_req_2">• Supports All CPU/GPU Components</li>
+                        <li data-key="rage_req_3">• Windowed, Borderless & Fullscreen Supported</li>
+                        <li data-key="rage_req_4">• All Resolutions Supported</li>
+                        <li data-key="rage_req_5">• Does not support custom OS</li>
+                        <li data-key="rage_req_6">• Supports HVCI (Core isolation) On/Off</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="features-section">
+                <h3 data-key="rage_aim_title">Aimbot</h3>
+                <div class="feature-category">
+                    <ul>
+                        <li data-key="rage_aim_1">• Enable, Recoil Control, Visible Check</li>
+                        <li data-key="rage_aim_2">• No Spread, Auto Shoot (rage)</li>
+                        <li data-key="rage_aim_3">• Show FOV, Field Of View, Smoothness</li>
+                        <li data-key="rage_aim_4">• Aim Bone, Recoil Crosshair</li>
+                    </ul>
+                </div>
+            </div>
+             <div class="features-section">
+                <h3 data-key="rage_vis_title">Visuals</h3>
+                <div class="features-multi-column cols-2">
+                    <div class="feature-column">
+                        <ul>
+                            <li data-key="rage_vis_1">• Box ESP, Box Type (3D Box)</li>
+                            <li data-key="rage_vis_2">• Skeleton, Head ESP</li>
+                            <li data-key="rage_vis_3">• Agent Icon, Weapon Icon</li>
+                            <li data-key="rage_vis_4">• Distance ESP, Enemy Fresnel</li>
+                            <li data-key="rage_vis_5">• Health + Armor Bar, Snapline</li>
+                        </ul>
+                    </div>
+                    <div class="feature-column">
+                        <h4 data-key="rage_world_title">World</h4>
+                         <ul>
+                            <li data-key="rage_world_1">• Spike Info, Abilities ESP</li>
+                            <li data-key="rage_world_2">• Night Mode, Devil Mode, Apply Wukong</li>
+                            <li data-key="rage_world_3">• Skybox Changer (Red, Green, Blue)</li>
+                            <li data-key="rage_world_4">• Rainbow Sky, Rainbow Speed</li>
+                            <li data-key="rage_world_5">• Cloud Opacity, Cloud Speed, Intensity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="features-section">
+                <h3 data-key="rage_out_title">Outline</h3>
+                 <div class="features-multi-column cols-3">
+                     <div class="feature-column">
+                        <h4 data-key="rage_out_left_title">Outline</h4>
+                        <ul>
+                            <li data-key="rage_out_left_1">• Enable Enemy Chams, Galaxy Enemy</li>
+                            <li data-key="rage_out_left_2">• Self Galaxy (Do not enable if using V)</li>
+                            <li data-key="rage_out_left_3">• Type (Always Outline), Intensity (Visible/Invisible)</li>
+                            <li data-key="rage_out_left_4">• Hand Fresnel, Rainbow Color/Speed</li>
+                            <li data-key="rage_out_left_5">• Intensity, Fresnel (Red, Green, Blue)</li>
+                        </ul>
+                     </div>
+                     <div class="feature-column">
+                        <h4 data-key="rage_out_mid_title">Visible Color</h4>
+                         <ul>
+                            <li data-key="rage_out_mid_1">• Center Edge (Red, Green, Blue)</li>
+                            <li data-key="rage_out_mid_2">• Inner Edge (Red, Green, Blue)</li>
+                            <li data-key="rage_out_mid_3">• Outer Edge (Red, Green, Blue)</li>
+                        </ul>
+                     </div>
+                     <div class="feature-column">
+                        <h4 data-key="rage_out_right_title">Invisible Color</h4>
+                        <ul>
+                           <li data-key="rage_out_right_1">• Center Edge (Red, Green, Blue)</li>
+                           <li data-key="rage_out_right_2">• Inner Edge (Red, Green, Blue)</li>
+                           <li data-key="rage_out_right_3">• Outer Edge (Red, Green, Blue)</li>
+                        </ul>
+                     </div>
+                 </div>
+            </div>
+            <div class="features-section">
+                <h3 data-key="rage_misc_title">Misc</h3>
+                <div class="features-multi-column cols-3">
+                    <div class="feature-column">
+                        <h4 data-key="rage_misc_left_title">Miscellaneous</h4>
+                         <ul>
+                            <li data-key="rage_misc_left_1">• Skip Tutorial, Wireframe Hand</li>
+                            <li data-key="rage_misc_left_2">• Third Person, Keybind (T), Value</li>
+                            <li data-key="rage_misc_left_3">• Custom Aspect Ratio, Value</li>
+                            <li data-key="rage_misc_left_4">• Custom Local FOV, Value</li>
+                            <li data-key="rage_misc_left_5">• Viewmodel Changer, Value</li>
+                            <li data-key="rage_misc_left_6">• Self Resizer, Size Value</li>
+                        </ul>
+                    </div>
+                    <div class="feature-column">
+                        <h4 data-key="rage_misc_mid_title">Self</h4>
+                        <ul>
+                           <li data-key="rage_misc_mid_1">• Bunny Hop, Fast Crouch</li>
+                           <li data-key="rage_misc_mid_2">• Hand Glow (Rainbow, Intensity, Speed, R, G, B)</li>
+                           <li data-key="rage_misc_mid_3">• Gun Glow (R, G, B, Intensity)</li>
+                       </ul>
+                    </div>
+                    <div class="feature-column">
+                        <h4 data-key="rage_misc_right_title">Client Modification</h4>
+                        <ul>
+                           <li data-key="rage_misc_right_1">• Unlock All</li>
+                           <li data-key="rage_misc_right_2">• Use Buddy Changer, Buddy ID (467)</li>
+                       </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="features-section">
+                <h3 data-key="rage_antiaim_title">Anti Aim</h3>
+                 <div class="feature-category">
+                    <ul>
+                        <li data-key="rage_antiaim_1">• Enable Anti Aim</li>
+                        <li data-key="rage_antiaim_2">• Mode Pitch (Default), Mode Yaw (Default)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pricing-section">
+                <h3 data-key="rage_price_title">Pricing</h3>
+                <div class="pricing-grid">
+                    <div class="price-item"><span data-key="rage_price_3d">3 DAYS</span><strong>$15.00</strong></div>
+                    <div class="price-item"><span data-key="rage_price_1w">1 WEEK</span><strong>$35.00</strong></div>
+                    <div class="price-item"><span data-key="rage_price_1m">1 MONTH</span><strong>$70.00</strong></div>
+                    <div class="price-item"><span data-key="rage_price_lft">LFT</span><strong>$180.00</strong></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    // Presentación inicial
-    window.addEventListener('load', function() {
-      const presentation = document.getElementById('presentation');
-      
-      // Ocultar presentación
-      setTimeout(() => {
-        if (presentation) {
-          presentation.style.opacity = '0';
-          presentation.style.visibility = 'hidden';
-        }
-      }, 2500);
-    });
+    <!-- Slotted Features Modal -->
+    <div id="slotted-features-modal" class="modal">
+        <div class="modal-content features-modal-content">
+            <span class="close-button">&times;</span>
+            <h2 data-key="slot_title">SLOTTED FEATURES</h2>
+            <div class="features-grid">
+                <div class="feature-category">
+                    <h3 data-key="slot_req_title">Requirements</h3>
+                    <ul>
+                        <li data-key="slot_req_1">Windows 10 Supported - All Versions</li>
+                        <li data-key="slot_req_2">Windows 11 Supported - All Versions</li>
+                        <li data-key="slot_req_3">Supports All CPU/GPU Components</li>
+                        <li data-key="slot_req_4">Windowed & Borderless Supported</li>
+                        <li data-key="slot_req_5">All Resolutions Supported</li>
+                        <li data-key="slot_req_6">Does not support custom OS</li>
+                        <li data-key="slot_req_7">Supports HVCI (Core isolation)</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3 data-key="slot_vis_title">Visuals - Features</h3>
+                    <ul>
+                        <li data-key="slot_vis_1">Recoil Crosshair</li>
+                        <li data-key="slot_vis_2">2D Box & Filled Box</li>
+                        <li data-key="slot_vis_3">Name & Distance</li>
+                        <li data-key="slot_vis_4">Health Bar & Head Dot</li>
+                        <li data-key="slot_vis_5">Team Filter</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3 data-key="slot_aim_title">Aimbot - Features</h3>
+                    <ul>
+                        <li data-key="slot_aim_1">Enable & RCS</li>
+                        <li data-key="slot_aim_2">Target Team & Aim Key</li>
+                        <li data-key="slot_aim_3">Aim Bone [Head/Chest/Leg]</li>
+                        <li data-key="slot_aim_4">Smoothing & Fov</li>
+                        <li data-key="slot_aim_5">Aimbot Distance</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3 data-key="slot_misc_title">Misc</h3>
+                    <ul>
+                        <li data-key="slot_misc_1">Crosshair & Fov Circle</li>
+                        <li data-key="slot_misc_2">Target Aim Line</li>
+                        <li data-key="slot_misc_3">Watermark</li>
+                        <li data-key="slot_misc_4">Stream Proof</li>
+                        <li data-key="slot_misc_5">Core Isolation [Supported]</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pricing-section">
+                <h3 data-key="slot_price_title">Pricing</h3>
+                <div class="price-list">
+                    <div class="price-bar">
+                        <span data-key="slot_price_15d">15 Days</span>
+                        <strong>$69.99</strong>
+                    </div>
+                    <div class="price-bar">
+                        <span data-key="slot_price_1m">1 Month</span>
+                        <strong>$124.99</strong>
+                    </div>
+                    <div class="price-bar">
+                        <span data-key="slot_price_lft">Lifetime</span>
+                        <strong>$299.99</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    // Navegación
-    document.addEventListener('DOMContentLoaded', function() {
-      // Inicializar la primera sección como activa
-      const accountsSection = document.getElementById('accounts');
-      const accountsLink = document.querySelector('[href="#accounts"]');
-      if (accountsSection) accountsSection.classList.add('active');
-      if (accountsLink) accountsLink.classList.add('active');
+    <!-- External Features Modal -->
+    <div id="external-features-modal" class="modal">
+        <div class="modal-content features-modal-content">
+            <span class="close-button">&times;</span>
+            <h2 data-key="ext_title">FULL EXTERNO</h2>
+            <div class="features-grid">
+                <div class="feature-category">
+                    <h3 data-key="ext_req_title">Requisitos</h3>
+                    <ul><li data-key="ext_req_1">Windows 10 y 11</li><li data-key="ext_req_2">Todos los CPU/GPU</li><li data-key="ext_req_3">Modo ventana y sin bordes</li><li data-key="ext_req_4">No compatible con SO modificados</li><li data-key="ext_req_5">Compatible con Aislamiento del núcleo (HVCI)</li></ul>
+                </div>
+                <div class="feature-category">
+                    <h3 data-key="ext_vis_title">Visuales (ESP)</h3>
+                    <ul><li data-key="ext_vis_1">Caja, cabeza, vida, esqueleto, líneas</li><li data-key="ext_vis_2">Radar y minimapa</li><li data-key="ext_vis_3">Armas, spike, agentes</li><li data-key="ext_vis_4">Modo sin lag</li></ul>
+                </div>
+                <div class="feature-category">
+                    <h3 data-key="ext_aim_title">Aimbot</h3>
+                    <ul><li data-key="ext_aim_1">Aimbot + Modo imán</li><li data-key="ext_aim_2">Mostrar FOV y línea de objetivo</li><li data-key="ext_aim_3">Sin retroceso (RCS) + suavidad</li></ul>
+                </div>
+                <div class="feature-category">
+                    <h3 data-key="ext_misc_title">Exploits & Misceláneo</h3>
+                    <ul><li data-key="ext_misc_1">Emulación de Vanguard</li><li data-key="ext_misc_2">Crosshair falso y Bunnyhop</li><li data-key="ext_misc_3">Modo invisible para streams</li><li data-key="ext_misc_4">Botón de pánico y mostrar FPS</li></ul>
+                </div>
+            </div>
+            <div class="pricing-section">
+                <h3 data-key="ext_price_title">Precios</h3>
+                <div class="pricing-grid">
+                    <div class="price-item"><span data-key="ext_price_day">DÍA</span><strong>$10.00</strong></div>
+                    <div class="price-item"><span data-key="ext_price_week">SEMANA</span><strong>$30.00</strong></div>
+                    <div class="price-item"><span data-key="ext_price_month">MES</span><strong>$50.00</strong></div>
+                    <div class="price-item"><span data-key="ext_price_lft">LFT</span><strong>$150.00</strong></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-      // Manejar clicks en los enlaces de navegación
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          const sectionId = this.getAttribute('href').substring(1);
-          switchSection(sectionId);
-        });
-      });
+    <!-- Accounts Modal (Structure updated) -->
+    <div id="accounts-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-key="accounts_modal_title">ACCOUNTS</h3>
+                <span class="close-button">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="product-showcase-left">
+                    <img src="https://via.placeholder.com/400x600.png/111/fff?text=ACCOUNTS" alt="Accounts Showcase">
+                    <div class="showcase-footer">
+                        <div class="product-count">1 Product</div>
+                        <button class="purchase-button-main" data-key="purchase">PURCHASE</button>
+                    </div>
+                </div>
+                <div class="product-grid-right">
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/300x150.png/222/fff?text=Account+Type+1" alt="Product Placeholder">
+                        <h4>Account Type 1</h4>
+                        <div class="product-meta"><div class="price"><span>Starting</span><strong>$19.99</strong></div></div>
+                        <div class="card-buttons"><button class="features-button" data-key="features">FEATURES</button></div>
+                    </div>
+                    <!-- More products can be added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bo6 Modal -->
+    <div id="bo6-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-key="bo6_modal_title">BO6 PRODUCTS</h3>
+                <span class="close-button">&times;</span>
+            </div>
+            <div class="modal-body">
+                 <div class="product-showcase-left">
+                    <img src="https://cdn.discordapp.com/attachments/1347343400533360651/1386101697289650336/14b00e5ac1ca228b367ed0126c482212-remove-bg-io.png?ex=68587b4d&is=685729cd&hm=f18122e9ca5c565fa02ad8e26d53ce81e12409f85cab1d99dfafed75425a0dd7&" alt="BO6 Showcase">
+                    <div class="showcase-footer">
+                        <div class="product-count">2 Products</div>
+                        <button class="purchase-button-main" data-key="purchase">PURCHASE</button>
+                    </div>
+                </div>
+                <div class="product-grid-right">
+                    <div class="product-card">
+                        <img src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blackops6/meta/BO6_MetaImage.png" alt="External Product">
+                        <h4 data-key="bo6_external_product">external</h4>
+                        <div class="product-meta"><div class="price"><span>Starting</span><strong>$9.99</strong></div></div>
+                        <div class="card-buttons"><button class="features-button" data-key="features" data-modal-target="#bo6-external-features-modal">FEATURES</button></div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blackops6/meta/BO6_MetaImage.png" alt="Internal + Spoofer Product">
+                        <h4 data-key="bo6_internal_spoofer_product">internal+spoofer</h4>
+                        <div class="product-meta"><div class="price"><span>Starting</span><strong>$1.24</strong></div></div>
+                        <div class="card-buttons"><button class="features-button" data-key="features" data-modal-target="#bo6-internal-spoofer-features-modal">FEATURES</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-      // Modal de imágenes
-      const modal = document.getElementById('imageModal');
-      const modalImg = document.getElementById('modalImage');
-      const captionText = document.getElementById('modalCaption');
-      const closeBtn = document.querySelector('.modal-close');
+    <!-- BO6 Internal+Spoofer Features Modal -->
+    <div id="bo6-internal-spoofer-features-modal" class="modal">
+        <div class="modal-content features-modal-content">
+            <span class="close-button">&times;</span>
+            <h2 data-key="bo6_is_title">Internal + Spoofer Features</h2>
 
-      // Abrir modal al hacer click en las imágenes
-      document.querySelectorAll('.zoomable').forEach(img => {
-        img.style.cursor = 'zoom-in';
-        img.onclick = function() {
-          modal.style.display = "flex";
-          modalImg.src = this.src;
-          captionText.innerHTML = this.alt;
-          document.body.style.overflow = 'hidden'; // Prevenir scroll
-        }
-      });
+            <div class="features-section">
+                <h3 data-key="bo6_is_req_title">Requirements</h3>
+                <div class="feature-category">
+                    <ul>
+                        <li data-key="bo6_is_req_1">• Windows 10 + Windows 11 (21H2 - 22H2) Supported</li>
+                        <li data-key="bo6_is_req_2">• Windows 11 23H2 Supported</li>
+                        <li data-key="bo6_is_req_3">• Windows 11 24H2 Supported</li>
+                        <li data-key="bo6_is_req_4">• PC only</li>
+                    </ul>
+                </div>
+            </div>
 
-      // Cerrar modal
-      closeBtn.onclick = closeModal;
-      modal.onclick = function(e) {
-        if (e.target === modal) {
-          closeModal();
-        }
-      }
+            <div class="features-section">
+                <h3 data-key="bo6_is_aim_title">Aimbot - Features</h3>
+                <div class="features-multi-column cols-2">
+                    <div class="feature-column">
+                        <ul>
+                            <li data-key="bo6_is_aim_1">• Aim Types: Standard, P-Silent</li>
+                            <li data-key="bo6_is_aim_2">• Target Bones: Helmet, Head, Neck, Chest, Pelvis, Any</li>
+                            <li data-key="bo6_is_aim_3">• Override Bones: Left Foot, Right Foot, Left Knee, Right Knee</li>
+                            <li data-key="bo6_is_aim_4">• Smoothness & Prediction: Adjustable (0-100)</li>
+                        </ul>
+                    </div>
+                    <div class="feature-column">
+                        <ul>
+                            <li data-key="bo6_is_aim_5">• Target Options: Enemies Only, Visible Check, Skip Downed/Self-Revive</li>
+                            <li data-key="bo6_is_aim_6">• Prioritization: FOV + Distance, FOV Only, Distance Only</li>
+                            <li data-key="bo6_is_aim_7">• FOV Range: Adjustable (0-1000) with visualization</li>
+                            <li data-key="bo6_is_aim_8">• ESP Range: Adjustable (0-1000)</li>
+                            <li data-key="bo6_is_aim_9">• Crosshair Display</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-      // Cerrar con ESC
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          closeModal();
-        }
-      });
+            <div class="features-section">
+                <h3 data-key="bo6_is_antiaim_title">Anti-Aim Features</h3>
+                <div class="feature-category">
+                    <ul>
+                        <li data-key="bo6_is_antiaim_1">• Spin Bot</li>
+                        <li data-key="bo6_is_antiaim_2">• Jitter Bot</li>
+                        <li data-key="bo6_is_antiaim_3">• 180° Turn Bot</li>
+                    </ul>
+                </div>
+            </div>
 
-      function closeModal() {
-        modal.style.display = "none";
-        document.body.style.overflow = 'auto'; // Restaurar scroll
-      }
-    });
+            <div class="features-section">
+                <h3 data-key="bo6_is_vis_title">Visual - Features</h3>
+                <div class="features-multi-column cols-2">
+                     <div class="feature-column">
+                        <h4 data-key="bo6_is_vis_player_title">Player ESP</h4>
+                        <ul>
+                            <li data-key="bo6_is_vis_player_1">• Box, Corner Box, Filled Box, 3D Box</li>
+                            <li data-key="bo6_is_vis_player_2">• Skeleton, Health Bar, Snaplines, Distance, Name</li>
+                            <li data-key="bo6_is_vis_player_3">• Team ID, Weapon, Kill/Death Count, Outlines</li>
+                            <li data-key="bo6_is_vis_player_4">• Compass ESP, Advanced UAV, Aim Warnings, Bullet Tracers</li>
+                        </ul>
+                    </div>
+                    <div class="feature-column">
+                        <h4 data-key="bo6_is_vis_loot_title">Loot ESP</h4>
+                        <ul>
+                            <li data-key="bo6_is_vis_loot_1">• Ammo, Weapons, Money, Armor</li>
+                            <li data-key="bo6_is_vis_loot_2">• Supply Boxes, Misc Items</li>
+                            <li data-key="bo6_is_vis_loot_3">• Adjustable Range (1-1000)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-    function switchSection(sectionId) {
-      const targetSection = document.getElementById(sectionId);
-      const targetLink = document.querySelector(`[href="#${sectionId}"]`);
-      
-      if (!targetSection || !targetLink) return;
+            <div class="features-section">
+                <h3 data-key="bo6_is_comp_title">Compass & Visuals - Features</h3>
+                 <div class="feature-category">
+                    <ul>
+                        <li data-key="bo6_is_comp_1">• Targeting: Enemies Only, Visible Check, Compass Visuals, Aim Warnings</li>
+                        <li data-key="bo6_is_comp_2">• Compass: Adjustable Zoom, Arrow Size/Fill, Rainbow Mode</li>
+                    </ul>
+                </div>
+            </div>
 
-      document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-      });
+            <div class="features-section">
+                <h3 data-key="bo6_is_rem_title">Removals - Features</h3>
+                <div class="features-multi-column cols-2">
+                    <div class="feature-column">
+                        <ul>
+                            <li data-key="bo6_is_rem_1">• Recoil Control: No Recoil, Adjustable Amount, No Sway</li>
+                            <li data-key="bo6_is_rem_2">• Effect Removal: Disable Flinch, Stun, Flashbang, Shield Shake, Fog</li>
+                        </ul>
+                    </div>
+                    <div class="feature-column">
+                        <ul>
+                            <li data-key="bo6_is_rem_3">• Visual Adjustments: Hide Weapon, Full Bright Mode</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-      targetSection.classList.add('active');
-      targetLink.classList.add('active');
-    }
+            <div class="features-section">
+                <h3 data-key="bo6_is_exp_title">Exploits & Enhancements - Features</h3>
+                <div class="feature-category">
+                    <ul>
+                        <li data-key="bo6_is_exp_1">• Third-Person Mode</li>
+                        <li data-key="bo6_is_exp_2">• Quick Actions: Instant Reload/Weapon Swap</li>
+                        <li data-key="bo6_is_exp_3">• FOV Adjustment: Adjustable (1-200)</li>
+                        <li data-key="bo6_is_exp_4">• Visual Enhancements: Skip Cutscenes, Big Mini Map, Developer Playlist, Unlock Loadouts</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="features-section">
+                <h3 data-key="bo6_is_cust_title">Customization - Features</h3>
+                <div class="feature-category">
+                    <ul>
+                        <li data-key="bo6_is_cust_1">• UI & Visual Colors: Fully customizable for ESP elements, Compass, Tracers</li>
+                        <li data-key="bo6_is_cust_2">• Save/Load Configs: Up to 10 configurations ([F1]-[F5])</li>
+                    </ul>
+                </div>
+            </div>
 
-    const ticketTypes = [
-      "consulta sobre cuentas FA",
-      "consulta sobre bypass",
-      "consulta sobre cheats",
-      "consulta sobre formas de pago",
-      "consulta sobre garantía",
-      "solicitud de soporte",
-      "pregunta sobre precios",
-      "consulta sobre disponibilidad"
-    ];
+            <div class="features-section">
+                <h3 data-key="bo6_is_unlock_title">Unlocks & Account - Features</h3>
+                 <div class="feature-category">
+                    <ul>
+                        <li data-key="bo6_is_unlock_1">• Unlock All Items</li>
+                        <li data-key="bo6_is_unlock_2">• Camo & Attachment Saver</li>
+                        <li data-key="bo6_is_unlock_3">• Account Management: Clean Screenshots, Unlock/Revert Items, Bypass Profanity Filter, Custom Clantag</li>
+                    </ul>
+                </div>
+            </div>
 
-    const userTypes = [
-      "Usuario Nuevo",
-      "Cliente Frecuente",
-      "Usuario Verificado",
-      "Cliente VIP",
-      "Miembro Nuevo",
-      "Usuario Interesado"
-    ];
+        </div>
+    </div>
 
-    function showPurchaseNotification() {
-      const ticketType = ticketTypes[Math.floor(Math.random() * ticketTypes.length)];
-      const userType = userTypes[Math.floor(Math.random() * userTypes.length)];
-      const notification = document.getElementById('purchaseNotification');
-      const notificationText = notification.querySelector('.notification-text');
-      
-      notificationText.textContent = `${userType} abrió un ticket para ${ticketType}`;
-      
-      notification.classList.add('show');
-      
-      setTimeout(() => {
-        notification.classList.remove('show');
-      }, 4000);
-    }
+    <!-- BO6 External Features Modal -->
+    <div id="bo6-external-features-modal" class="modal">
+        <div class="modal-content features-modal-content">
+            <span class="close-button">&times;</span>
+            <h2 data-key="bo6_ext_title">External Features</h2>
 
-    // Mostrar notificación cada 3 minutos
-    setInterval(showPurchaseNotification, 180000);
-    // Mostrar primera notificación después de 10 segundos
-    setTimeout(showPurchaseNotification, 10000);
-  </script>
+            <div class="features-grid">
+                <div class="feature-category">
+                    <h3 data-key="bo6_ext_req_title">Requirements</h3>
+                    <ul>
+                        <li data-key="bo6_ext_req_1">• Windows 10 + Windows 11 (21H2 - 22H2) Supported</li>
+                        <li data-key="bo6_ext_req_2">• Windows 11 23H2 Supported</li>
+                        <li data-key="bo6_ext_req_3">• Windows 11 24H2 Supported</li>
+                        <li data-key="bo6_ext_req_4">• Battlenet, Steam and XBOX GAMEPASS Supported</li>
+                        <li data-key="bo6_ext_req_5">• Controller Supported</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <h3 data-key="bo6_ext_aim_title">Aimbot - Features</h3>
+                    <ul>
+                        <li data-key="bo6_ext_aim_1">• Predict Aim</li>
+                        <li data-key="bo6_ext_aim_2">• Aiming Methods: Distance, Crosshair</li>
+                        <li data-key="bo6_ext_aim_3">• Controller Support</li>
+                        <li data-key="bo6_ext_aim_4">• Two Aim Keys</li>
+                        <li data-key="bo6_ext_aim_5">• Ignore Downed Players</li>
+                        <li data-key="bo6_ext_aim_6">• Ignore Visibility</li>
+                        <li data-key="bo6_ext_aim_7">• Ignore Near FOV</li>
+                        <li data-key="bo6_ext_aim_8">• Ignore AI</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-category">
+                    <h3 data-key="bo6_ext_pesp_title">Player ESP - Features</h3>
+                     <ul>
+                        <li data-key="bo6_ext_pesp_1">• Enable ESP</li>
+                        <li data-key="bo6_ext_pesp_2">• ESP Distance</li>
+                        <li data-key="bo6_ext_pesp_3">• Box ESP</li>
+                        <li data-key="bo6_ext_pesp_4">• Bone ESP</li>
+                        <li data-key="bo6_ext_pesp_5">• ESP Mode: Full ESP</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <h3 data-key="bo6_ext_aiesp_title">AI ESP - Features</h3>
+                    <ul>
+                        <li data-key="bo6_ext_aiesp_1">• Enable ESP</li>
+                        <li data-key="bo6_ext_aiesp_2">• ESP Distance</li>
+                        <li data-key="bo6_ext_aiesp_3">• Box ESP</li>
+                        <li data-key="bo6_ext_aiesp_4">• Bone ESP</li>
+                        <li data-key="bo6_ext_aiesp_5">• ESP Mode: Full ESP, Visible, Not Visible</li>
+                        <li data-key="bo6_ext_aiesp_6">• Line to Crosshair</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-category">
+                    <h3 data-key="bo6_ext_disp_content_title">Display Content - Features</h3>
+                     <ul>
+                        <li data-key="bo6_ext_disp_content_1">• Name</li>
+                        <li data-key="bo6_ext_disp_content_2">• Team</li>
+                        <li data-key="bo6_ext_disp_content_3">• Distance</li>
+                        <li data-key="bo6_ext_disp_content_4">• Health</li>
+                        <li data-key="bo6_ext_disp_content_5">• Kills</li>
+                        <li data-key="bo6_ext_disp_content_6">• Weapon</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <h3 data-key="bo6_ext_disp_options_title">Display Options - Features</h3>
+                    <ul>
+                        <li data-key="bo6_ext_disp_options_1">• Alerts</li>
+                        <li data-key="bo6_ext_disp_options_2">• Alert Distance (0-300)</li>
+                        <li data-key="bo6_ext_disp_options_3">• Crosshair</li>
+                        <li data-key="bo6_ext_disp_options_4">• Adjustable Crosshair Size (0-100)</li>
+                        <li data-key="bo6_ext_disp_options_5">• FOV</li>
+                        <li data-key="bo6_ext_disp_options_6">• Bullet Hit</li>
+                    </ul>
+                </div>
+
+                <div class="feature-category">
+                    <h3 data-key="bo6_ext_misc_title">Misc - Features</h3>
+                    <ul>
+                        <li data-key="bo6_ext_misc_1">• Reduce Recoil</li>
+                        <li data-key="bo6_ext_misc_2">• Adjustable Power (0%-100%)</li>
+                        <li data-key="bo6_ext_misc_3">• No Recoil</li>
+                        <li data-key="bo6_ext_misc_4">• UAV</li>
+                        <li data-key="bo6_ext_misc_5">• Third Person</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fortnite Modal -->
+    <div id="fortnite-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-key="fortnite_modal_title">FORTNITE PRODUCTS</h3>
+                <span class="close-button">&times;</span>
+            </div>
+            <div class="modal-body">
+                 <div class="product-showcase-left">
+                    <img src="https://cdn.discordapp.com/attachments/1347343400533360651/1386219445122502807/renega-Photoroom.png?ex=6858e8f6&is=68579776&hm=4903379969ad2b8f200a32ca46a728cc59913067cdb2d08024e5657122ec7410&" alt="Fortnite Showcase">
+                    <div class="showcase-footer">
+                        <div class="product-count">1 Product</div>
+                        <button class="purchase-button-main" data-key="purchase">PURCHASE</button>
+                    </div>
+                </div>
+                <div class="product-grid-right">
+                    <div class="product-card">
+                        <img src="https://cdn.discordapp.com/attachments/1358693537884930140/1386196856207315044/image.png?ex=6858d3ec&is=6857826c&hm=6a2bbefb4f72ecd4ef07ea290e7df15e4cad0a11682e471d5df9519eb1944c6f&" alt="External Product">
+                        <h4 data-key="fortnite_external_product">EXTERNAL</h4>
+                        <div class="product-meta"><div class="price"><span>Starting</span><strong>$10.00</strong></div></div>
+                        <div class="card-buttons"><button class="features-button" data-key="features" data-modal-target="#fortnite-features-modal">FEATURES</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fortnite Features Modal -->
+    <div id="fortnite-features-modal" class="modal">
+        <div class="modal-content features-modal-content">
+            <span class="close-button">&times;</span>
+            <h2 data-key="fortnite_features_title">FORTNITE FEATURES</h2>
+            <div class="features-grid">
+                <div class="feature-category">
+                    <h3 data-key="fn_req_title">Requirements</h3>
+                    <ul>
+                        <li data-key="fn_req_1">• Compatible on all motherboards, CPUs and GPU's</li>
+                        <li data-key="fn_req_2">• Supports Windows 10 and 11</li>
+                        <li data-key="fn_req_3">• Interactive Menu GUI</li>
+                        <li data-key="fn_req_4">• Exceptional security and stealth to prevent detection</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3 data-key="fn_aim_title">Aimbot - Features</h3>
+                    <ul>
+                        <li data-key="fn_aim_1">• Enable Aimbot</li>
+                        <li data-key="fn_aim_2">• Enable Prediction</li>
+                        <li data-key="fn_aim_3">• Show FOV circle</li>
+                        <li data-key="fn_aim_4">• Smoothnes</li>
+                        <li data-key="fn_aim_5">• FOV</li>
+                        <li data-key="fn_aim_6">• Aim Key setting</li>
+                        <li data-key="fn_aim_7">• Aim Position</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3 data-key="fn_vis_title">Visuals - Features</h3>
+                    <ul>
+                        <li data-key="fn_vis_1">• Draw Box</li>
+                        <li data-key="fn_vis_2">• Outlined Box</li>
+                        <li data-key="fn_vis_3">• Filled Box</li>
+                        <li data-key="fn_vis_4">• Box Thickness</li>
+                        <li data-key="fn_vis_5">• Draw Distance</li>
+                        <li data-key="fn_vis_6">• Outlined Distance</li>
+                        <li data-key="fn_vis_7">• Draw Username</li>
+                        <li data-key="fn_vis_8">• Draw Skeleton</li>
+                        <li data-key="fn_vis_9">• Outlined Skeleton</li>
+                        <li data-key="fn_vis_10">• Skeleton Thickness</li>
+                        <li data-key="fn_vis_11">• Head Cỉcle</li>
+                        <li data-key="fn_vis_12">• Warning Awareness</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3 data-key="fn_misc_title">Misc - Features</h3>
+                    <ul>
+                        <li data-key="fn_misc_1">• Radar</li>
+                        <li data-key="fn_misc_2">• Stream Proof</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pricing-section">
+                <h3 data-key="slot_price_title">Pricing</h3>
+                <div class="price-list">
+                    <div class="price-bar">
+                        <span data-key="fn_price_day">1 Day</span>
+                        <strong>$7.45</strong>
+                    </div>
+                    <div class="price-bar">
+                        <span data-key="fn_price_week">1 Week</span>
+                        <strong>$29.99</strong>
+                    </div>
+                    <div class="price-bar">
+                        <span data-key="fn_price_month">1 Month</span>
+                        <strong>$59.99</strong>
+                    </div>
+                    <div class="price-bar">
+                        <span data-key="fn_price_lft">Lifetime</span>
+                        <strong>$249.99</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Woofers Modal -->
+    <div id="woofers-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-key="woofers_modal_title">WOOFERS PRODUCTS</h3>
+                <span class="close-button">&times;</span>
+            </div>
+            <div class="modal-body">
+                 <div class="product-showcase-left">
+                    <img src="https://via.placeholder.com/400x600.png/111/fff?text=WOOFERS" alt="Woofers Showcase">
+                    <div class="showcase-footer">
+                        <div class="product-count">2 Products</div>
+                        <button class="purchase-button-main" data-key="purchase">PURCHASE</button>
+                    </div>
+                </div>
+                <div class="product-grid-right">
+                    <div class="product-card">
+                        <img src="https://cdn.discordapp.com/attachments/1347343400533360651/1386229723906183168/a70efaa9c83cf80d8073a416292434e4.gif?ex=6858f289&is=6857a109&hm=78c016a16574663ae8b59cbd830f3d72dff321397109d38d66e710e3bdfba8fe&" alt="One Click Product">
+                        <h4 data-key="woofers_one_click_product">ONE CLICK</h4>
+                        <div class="product-meta"><div class="price"><span>Starting</span><strong>$50.00</strong></div></div>
+                        <div class="card-buttons"><button class="features-button" data-key="features">FEATURES</button></div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://cdn.discordapp.com/attachments/1347343400533360651/1386228993933705306/fcf8d352ade303f7070f269d8fd7e33a.gif?ex=6858f1db&is=6857a05b&hm=95cc7953530ec9ee6c28ca01ec2bc39945caf5dc048c1430cde49a5ee62ea81f&" alt="1-PERM Product">
+                        <h4 data-key="woofers_perm_product">1-PERM</h4>
+                        <div class="product-meta"><div class="price"><span>Starting</span><strong>$30.00</strong></div></div>
+                        <div class="card-buttons"><button class="features-button" data-key="features">FEATURES</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Purchase Options Modal -->
+    <div id="purchase-options-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-key="purchase_modal_title">SELECCIONA UN PRODUCTO</h3>
+                <span class="close-button">&times;</span>
+            </div>
+            <div class="modal-body purchase-options">
+                <!-- Product buttons will be injected here by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Summary Modal -->
+    <div id="order-summary-modal" class="modal">
+        <div class="modal-content">
+             <div class="modal-header">
+                <h3 id="order-modal-title" data-key="order_title_prefix">Crear Pedido para: </h3>
+                <span class="close-button">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="duration-options-container">
+                    <!-- Duration buttons will be injected here by JS -->
+                </div>
+                <div id="final-order-details" class="hidden">
+                    <p id="order-summary-text"></p>
+                    <p id="order-summary-price"></p>
+                    <p class="order-instruction" data-key="order_instruction_text">manda foto de tu pedido a discord toma una captura de pantalla aqui &lt;3</p>
+                    <button class="confirm-purchase-btn" data-key="confirm_purchase_btn">Pagar en Discord - Entrega Inmediata</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Elements -->
+    <img src="https://i.pinimg.com/originals/7a/65/0e/7a650ea6efc7ad3fbc1c7486d520384e.gif" alt="Walking Cat" class="walking-cat">
+    <footer>
+        <div class="payment-logos">
+            <img src="https://cdn.discordapp.com/attachments/1358650324180664502/1363997584406089791/standard_2.gif?ex=6857d3fd&is=6856827d&hm=bcc1eaabdefd124dcf556e1ba500359a692b9c16e6d651dd4454dca3da655afd&" alt="standard-gif" class="footer-gif">
+            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Bitcoin</title><path d="M11.382.022a.51.51 0 00-.543.227L9.52 3.866c-1.61.12-3.13.51-4.54 1.127l-1.92-1.92a.51.51 0 00-.722 0L.39 5.02a.51.51 0 000 .722l1.92 1.92c-.345.92-.585 1.88-.705 2.85l-3.322.84a.51.51 0 00-.42.49v2.298a.51.51 0 00.42.49l3.323.838c.12 1.005.36 1.95.705 2.85l-1.92 1.92a.51.51 0 000 .722l2.047 2.047a.51.51 0 00.722 0l1.92-1.92c1.41.615 2.93 1.005 4.54 1.125l-1.32 3.617a.51.51 0 00.226.543l2.298 1.095a.51.51 0 00.543-.227L15.43 19.92c1.61-.12 3.13-.51 4.54-1.127l1.92 1.92a.51.51 0 00.722 0l2.047-2.047a.51.51 0 000-.722l-1.92-1.92c.345-.92.585-1.88-.705 2.85l3.323-.838a.51.51 0 00.42-.49V8.56a.51.51 0 00-.42-.49l-3.323-.838c-.12-1.005-.36-1.95-.705-2.85l1.92-1.92a.51.51 0 000-.722L20.692.39a.51.51 0 00-.722 0l-1.92 1.92c-1.41-.615-2.93-1.005-4.54-1.125l1.32-3.617a.51.51 0 00-.226-.543L12.312.022a.51.51 0 00-.93 0zM8.56 6.8h7.995c.33 0 .6.27.6.6v8.28c0 .33-.27.6-.6.6H8.56c-.33 0-.6-.27-.6-.6V7.4c0-.33.27-.6.6-.6zm.975 1.575v1.44h6.06v-1.44H9.535zm0 2.625v1.44h6.06v-1.44H9.535zm0 2.625v1.44h6.06v-1.44H9.535z"/></svg>
+            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Ethereum</title><path d="M12 0L2.33 11.95 12 16.62 21.67 11.95 12 0zm0 17.94l-9.67-5.26L12 24l9.67-11.32L12 17.94z"/></svg>
+            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>PayPal</title><path d="M11.109 5.882c-1.332 2.923 0 6.467 4.254 6.467 2.222 0 3.705-1.042 3.966-2.583.05-.298.07-.56.088-.823l.012-.138c.07-.79.03-1.57-.12-2.31-.235-1.14-.99-2.61-3.967-2.61-1.63 0-3.21.68-4.233 1.997zM2.936 21.604c.143.407.48.694.88.694h3.193c.38 0 .72-.27.83-.63l.117-.38.413-1.352.324-1.07.03-.09 1.62-5.323.013-.042c.117-.38.44-.64.83-.64h2.51c2.45 0 4.23-1.25 4.67-3.83.33-1.92-.35-3.32-1.39-4.22C19.12.87 17.38 0 14.71 0h-4.32C6.83 0 3.86 2.63 2.518 6.13c-.113.29-.24.6-.36.92-.12.3-.23.6-.33.9-.11.3-.2.6-.29.89-.08.28-.15.56-.22.84-.06.27-.12.54-.17.8-.04.26-.08.52-.1.78-.02.26-.04.53-.05.79-.004.09-.01.17-.01.26-.003.09-.007.18-.01.27-.002.08-.004.16-.006.24L0 20.314c-.01.35.25.65.6.69l2.336.2zM8.14 14.54l.02.06c.03.11.13.18.25.18h.49c.12 0 .22-.07.25-.18l.02-.06.74-2.42.02-.06c.03-.11.13-.18.25-.18h.49c.12 0 .22-.07.25-.18l.02-.06.3-1c.25-.83.33-1.4.15-2.02-.45-1.54-2.1-1.9-3.33-1.9h-.5c-.53 0-.98.37-1.1.88l-1.3 4.88c-.03.1-.03.2 0 .3l.1.37c.05.18.2.3.4.3h.42c.12 0 .23-.08.26-.19l.23-.74z"/></svg>
+            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Nubank</title><path d="M12.01 4.711a7.29 7.29 0 1 0 0 14.58 7.29 7.29 0 0 0 0-14.58zm-8.814 7.29a8.814 8.814 0 0 1 8.814-8.814V.121a11.876 11.876 0 1 0 .002 23.753v-3.717a8.816 8.816 0 0 1-8.816-8.815zm11.385-4.493a.91.91 0 0 0-.69.323L7.75 14.077a.91.91 0 0 0 .69 1.498l2.585.003c.22 0 .428-.08.59-.22l5.143-6.246a.91.91 0 0 0-.69-1.498zm-.01 2.257L9.72 13.923l-1.21-.001L14.59 7.48z"/></svg>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
-</html>
+</html> 
